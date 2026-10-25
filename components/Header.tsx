@@ -17,10 +17,20 @@ const links = [
 export function Header() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
+  const [topbarVisible, setTopbarVisible] = useState(true);
 
   useEffect(() => {
     setOpen(false);
   }, [pathname]);
+
+  useEffect(() => {
+    const onScroll = () => {
+      setTopbarVisible(window.scrollY < 12);
+    };
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "";
@@ -30,7 +40,7 @@ export function Header() {
   }, [open]);
 
   return (
-    <header className="site-header">
+    <header className={`site-header${topbarVisible ? "" : " topbar-hidden"}`}>
       <div className="topbar">
         <div className="wrap topbar-inner">
           <span>HBF Nigeria · UN ECOSOC since 21 July 2026</span>
