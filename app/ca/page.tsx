@@ -1,0 +1,224 @@
+import Link from "next/link";
+import { Icon } from "@/components/Icon";
+import { SITE } from "@/lib/links";
+import { Reveal } from "@/components/Reveal";
+
+const REP = "Representative image for Surrey community work — not a specific HBF event photo";
+
+export default function CanadaHomePage() {
+  return (
+    <main>
+      <section className="home-hero">
+        <img src="/images/ca/neighbourhood.jpg" alt={REP} />
+        <div className="wrap home-hero-bar">
+          <div>
+            <p className="kicker rise d1">Surrey · British Columbia</p>
+            <h1 className="rise d2">Neighbors helping neighbors.</h1>
+          </div>
+          <div className="home-hero-actions rise d3">
+            <Link className="btn gold" href="/ca/donate">
+              <Icon name="heart" />
+              Donate in Canada
+            </Link>
+            <Link className="btn" href="/ca/programs#surrey">
+              Surrey programs
+              <Icon name="arrow" />
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      <section className="stats" aria-label="HBF Canada Society">
+        <div className="stat">
+          <strong>S0086143</strong>
+          <span>BC Societies Act registration number</span>
+        </div>
+        <div className="stat">
+          <strong>Surrey</strong>
+          <span>Home base for Canada community programs</span>
+        </div>
+        <div className="stat">
+          <strong>CRA</strong>
+          <span>Registered charity application in progress</span>
+        </div>
+      </section>
+
+      <section className="section">
+        <div className="wrap">
+          <Reveal>
+            <p className="kicker">What we do</p>
+            <h2>Health, inclusion, and livelihood in Surrey.</h2>
+            <p className="lead">
+              HBF Canada Society works in affiliation with HBF Nigeria to support vulnerable people through local
+              outreach. The Surrey programs below are how the society organizes that work. Dates and sign-up details
+              are also published on {SITE.canada.label}.
+            </p>
+          </Reveal>
+          <div className="cards" style={{ marginTop: 28 }}>
+            <article className="card">
+              <img src="/images/ca/volunteers-team.jpg" alt={REP} />
+              <Reveal>
+                <div className="pillar-icon" aria-hidden="true">01</div>
+                <h3>Neighbourhood outreach</h3>
+                <p>
+                  Volunteer days, community gatherings, and referral support for families across Surrey and the Lower
+                  Mainland.
+                </p>
+                <Link href="/ca/programs#community">Community programs</Link>
+              </Reveal>
+            </article>
+            <article className="card">
+              <img src="/images/ca/food-hampers.jpg" alt={REP} />
+              <Reveal>
+                <div className="pillar-icon" aria-hidden="true">02</div>
+                <h3>Surrey food hampers</h3>
+                <p>
+                  Hamper-style food and household essentials for households facing hardship — the Canada society&apos;s
+                  livelihood program in Surrey.
+                </p>
+                <Link href="/ca/programs#hampers">Food hamper program</Link>
+              </Reveal>
+            </article>
+            <article className="card">
+              <img src="/images/ca/together.jpg" alt={REP} />
+              <Reveal>
+                <div className="pillar-icon" aria-hidden="true">03</div>
+                <h3>Inclusion</h3>
+                <p>
+                  Activities that welcome newcomers, seniors, and people with disabilities — in the same spirit as HBF
+                  Nigeria&apos;s inclusion work, adapted for Canada.
+                </p>
+                <Link href="/ca/programs#inclusion">Inclusion work</Link>
+              </Reveal>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section className="section" style={{ paddingTop: 0 }} id="surrey-preview">
+        <div className="wrap">
+          <Reveal>
+            <p className="kicker">Surrey programs</p>
+            <h2>Four lines of local work.</h2>
+            <p className="lead">
+              Food hampers, neighbourhood outreach, inclusion gatherings, and volunteer coordination. Photos on this
+              Canada site are representative of community work in British Columbia until HBF Canada event photos are
+              added.
+            </p>
+          </Reveal>
+          <div className="photo-strip" aria-label="Surrey program themes">
+            <Link href="/ca/programs#hampers" className="photo-strip-item">
+              <img src="/images/ca/produce.jpg" alt={REP} />
+              <span>Food hampers</span>
+            </Link>
+            <Link href="/ca/programs#community" className="photo-strip-item">
+              <img src="/images/ca/community-gathering.jpg" alt={REP} />
+              <span>Neighbourhood</span>
+            </Link>
+            <Link href="/ca/programs#inclusion" className="photo-strip-item">
+              <img src="/images/ca/newcomers.jpg" alt={REP} />
+              <span>Inclusion</span>
+            </Link>
+            <Link href="/ca/programs#volunteers" className="photo-strip-item">
+              <img src="/images/ca/packing.jpg" alt={REP} />
+              <span>Volunteers</span>
+            </Link>
+          </div>
+          <p style={{ marginTop: 18 }}>
+            <Link className="btn" href="/ca/programs#surrey">
+              Open Surrey programs
+              <Icon name="arrow" />
+            </Link>
+          </p>
+        </div>
+      </section>
+
+      <section className="section" style={{ paddingTop: 0 }}>
+        <div className="wrap story">
+          <img src="/images/ca/volunteers-team.jpg" alt={REP} />
+          <Reveal>
+            <p className="kicker">HBF Canada Society</p>
+            <h2>A separate society, a shared mission.</h2>
+            <p>
+              Incorporated under the British Columbia Societies Act. HBF Canada Society does not hold UN ECOSOC status.
+              Donations received here stay with the Canada society unless a future grant to Nigeria is approved and
+              recorded separately.
+            </p>
+            <p className="notice">
+              <strong>Official listings.</strong> Visit{" "}
+              <a href={SITE.canada.href}>{SITE.canada.label}</a> for Surrey dates and volunteer sign-up published by
+              the society.
+            </p>
+            <Link className="btn" href="/ca/about">
+              About the society
+              <Icon name="arrow" />
+            </Link>
+          </Reveal>
+        </div>
+      </section>
+
+      <section className="section" style={{ paddingTop: 0 }}>
+        <div className="wrap">
+          <Reveal>
+            <p className="kicker">In pictures</p>
+            <h2>Community, food, and gathering.</h2>
+          </Reveal>
+          <div className="gallery-wall" style={{ marginTop: 22 }}>
+            <figure>
+              <img src="/images/ca/neighbourhood.jpg" alt={REP} />
+              <figcaption>Community gathering — representative</figcaption>
+            </figure>
+            <figure>
+              <img src="/images/ca/food-hampers.jpg" alt={REP} />
+              <figcaption>Food support — representative</figcaption>
+            </figure>
+            <figure>
+              <img src="/images/ca/packing.jpg" alt={REP} />
+              <figcaption>Volunteer packing — representative</figcaption>
+            </figure>
+            <figure>
+              <img src="/images/ca/together.jpg" alt={REP} />
+              <figcaption>Inclusion — representative</figcaption>
+            </figure>
+            <figure>
+              <img src="/images/ca/produce.jpg" alt={REP} />
+              <figcaption>Essentials — representative</figcaption>
+            </figure>
+            <figure>
+              <img src="/images/ca/newcomers.jpg" alt={REP} />
+              <figcaption>Welcome and belonging — representative</figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <section className="section" style={{ paddingTop: 0 }}>
+        <div className="wrap">
+          <div className="band">
+            <Reveal>
+              <p className="kicker">Support the work</p>
+              <h2>Give to HBF Canada Society.</h2>
+              <p>
+                Transfer to the Canada society account, then submit proof of payment. Gifts stay with HBF Canada
+                Society.
+              </p>
+              <div className="actions">
+                <Link className="btn gold" href="/ca/donate">
+                  <Icon name="heart" />
+                  Donate in Canada
+                </Link>
+                <Link className="btn alt" href="/ca/programs#surrey">
+                  Surrey programs
+                  <Icon name="arrow" />
+                </Link>
+                <Link className="btn alt" href="/ng">
+                  Nigeria site
+                </Link>
+              </div>
+            </Reveal>
+          </div>
+        </div>
+      </section>
+    </main>
+  );
+}

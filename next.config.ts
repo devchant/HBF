@@ -8,6 +8,9 @@ const nextConfig: NextConfig = {
       { source: "/about.html", destination: "/about", permanent: false },
       { source: "/programs.html", destination: "/programs", permanent: false },
       { source: "/index.html", destination: "/", permanent: false },
+      { source: "/about", destination: "/ng/about", permanent: false },
+      { source: "/programs", destination: "/ng/programs", permanent: false },
+      { source: "/donate-nigeria", destination: "/ng/donate", permanent: false },
     ];
   },
 };

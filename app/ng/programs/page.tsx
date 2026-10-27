@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { SITE } from "@/lib/links";
 import { Icon } from "@/components/Icon";
 import { ProgramFilters } from "@/components/ProgramFilters";
 import { Reveal } from "@/components/Reveal";
@@ -28,12 +29,10 @@ export default function ProgramsPage() {
         <div className="wrap">
           <Reveal>
             <p className="kicker">The record</p>
-            <h2>Four programs. Three places.</h2>
+            <h2>Four programs. Warri and Abuja.</h2>
             <p className="lead">
-              Nigeria programs are led by HBF Nigeria, which holds UN ECOSOC status. See also{" "}
-              <a href="https://humanitarianbetterment.org">humanitarianbetterment.org</a>. Surrey, British Columbia
-              programs are published at <a href="https://www.hbfcanada.ca">hbfcanada.ca</a>. HBF Canada Society
-              (S0086143) is a separate legal entity.
+              HBF Nigeria holds UN ECOSOC status. Public updates are also on{" "}
+              <a href={SITE.nigeria.href}>{SITE.nigeria.label}</a>.
             </p>
           </Reveal>
           <ProgramFilters />
@@ -44,18 +43,13 @@ export default function ProgramsPage() {
               <h2>Food hampers for widows in Abuja.</h2>
               <p>
                 HBF Nigeria will distribute rice, oil, beans, garri, and household essentials to widows and vulnerable
-                women. Nigeria gifts are received by HBF Nigeria. Canada gifts are received by HBF Canada Society and
-                accounted separately.
+                women in Abuja.
               </p>
               <div className="actions">
-                <Link className="btn gold" href="/donate-nigeria">
+                <Link className="btn gold" href="/ng/donate">
                   <Icon name="heart" />
-                  Donate Nigeria
+                  Donate in Nigeria
                 </Link>
-                <a className="btn alt" href="https://humanitarianbetterment.ca/donate">
-                  Donate Canada
-                  <Icon name="out" />
-                </a>
                 <a className="btn alt" href="#abuja">
                   Read the plan
                   <Icon name="arrow" />
@@ -258,20 +252,10 @@ export default function ProgramsPage() {
                     <strong>Budget:</strong> about N15,000 per hamper
                   </li>
                   <li>
-                    <strong>Donate Nigeria:</strong>{" "}
-                    <Link href="/donate-nigeria">Donate in Nigeria</Link>
-                  </li>
-                  <li>
-                    <strong>Donate Canada:</strong>{" "}
-                    <a href="https://humanitarianbetterment.ca/donate">humanitarianbetterment.ca/donate</a> — received by
-                    HBF Canada Society for Canada programs, with any future grant to Nigeria accounted separately
+                    <strong>Donate:</strong> <Link href="/ng/donate">Give to HBF Nigeria</Link>
                   </li>
                 </ul>
-                <p>
-                  Donations to HBF Nigeria and HBF Canada Society are received by separate legal entities and accounted
-                  separately.
-                </p>
-                <Link className="btn donate" href="/donate-nigeria">
+                <Link className="btn donate" href="/ng/donate">
                   <Icon name="heart" />
                   Support the Abuja widows outreach
                 </Link>

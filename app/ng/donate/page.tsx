@@ -1,12 +1,13 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { DonatePanel } from "@/components/DonatePanel";
 import { Icon } from "@/components/Icon";
 import { Reveal } from "@/components/Reveal";
 
 export const metadata: Metadata = {
-  title: "Donate in Nigeria",
+  title: "Donate",
   description:
-    "Give to HBF Nigeria for the December 2026 widows outreach in Abuja. Request the HBF Nigeria Sterling Bank details by email or phone.",
+    "Give to HBF Nigeria for the December 2026 widows outreach in Abuja. Transfer to the HBF Nigeria account and submit proof of payment.",
 };
 
 export default function DonateNigeriaPage() {
@@ -33,7 +34,7 @@ export default function DonateNigeriaPage() {
                 HBF Nigeria will distribute rice, oil, beans, garri, and household essentials to widows and vulnerable
                 women in Abuja.
               </p>
-              <Link className="btn gold" href="/programs#abuja">
+              <Link className="btn gold" href="/ng/programs#abuja">
                 Read the plan
                 <Icon name="arrow" />
               </Link>
@@ -55,24 +56,9 @@ export default function DonateNigeriaPage() {
           </article>
 
           <div className="grid-2" style={{ marginTop: 18 }}>
-            <article className="card">
-              <Reveal>
-                <h3>How to give</h3>
-                <p>
-                  Email{" "}
-                  <a href="mailto:info@humanitarianbetterment.org?subject=Nigeria%20donation">
-                    info@humanitarianbetterment.org
-                  </a>{" "}
-                  or call 07085709872. Ask for the HBF Nigeria account at Sterling Bank. The account number is sent on
-                  request.
-                </p>
-                <p>In your message, include your name, the amount in naira, and the Abuja widows outreach if that is the gift you intend.</p>
-                <a className="btn" href="mailto:info@humanitarianbetterment.org?subject=Nigeria%20donation">
-                  <Icon name="mail" />
-                  Email Nigeria
-                </a>
-              </Reveal>
-            </article>
+            <Reveal>
+              <DonatePanel region="ng" />
+            </Reveal>
             <article className="card">
               <Reveal>
                 <h3>Who receives the gift</h3>
@@ -80,9 +66,8 @@ export default function DonateNigeriaPage() {
                   HBF Nigeria. CAC/IT/167408. SCUML. Special Consultative Status with UN ECOSOC since 21 July 2026.
                 </p>
                 <p className="notice">
-                  <strong>Separate accounts.</strong> Gifts to HBF Nigeria and HBF Canada Society are received by
-                  separate legal entities and accounted separately. Canada gifts go to{" "}
-                  <a href="https://humanitarianbetterment.ca/donate">humanitarianbetterment.ca/donate</a>.
+                  <strong>Canada gifts.</strong> HBF Canada Society receives donations separately on{" "}
+                  <Link href="/ca/donate">the Canada site</Link>.
                 </p>
               </Reveal>
             </article>

@@ -6,10 +6,12 @@ export function StatCounter({
   value,
   suffix = "",
   label,
+  grouping = true,
 }: {
   value: number;
   suffix?: string;
   label: string;
+  grouping?: boolean;
 }) {
   const [display, setDisplay] = useState(0);
   const ref = useRef<HTMLDivElement>(null);
@@ -45,7 +47,7 @@ export function StatCounter({
   return (
     <div ref={ref} className="stat">
       <strong>
-        {display.toLocaleString()}
+        {grouping ? display.toLocaleString("en-US") : display.toLocaleString("en-US", { useGrouping: false })}
         {suffix}
       </strong>
       <span>{label}</span>
