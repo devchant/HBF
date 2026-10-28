@@ -963,6 +963,230 @@ p { margin: 0 0 0.9rem; }
   .photo-hero-bar h1 { max-width: none; }
 }
 
+.admin-mobile-block {
+  display: none;
+  min-height: 100svh;
+  place-items: center;
+  padding: 24px;
+  background: var(--navy);
+}
+.admin-mobile-card {
+  width: min(100%, 420px);
+  padding: 28px 24px;
+  border-radius: 20px;
+  background: var(--sand);
+  text-align: center;
+}
+.admin-mobile-card img { width: 64px; height: 64px; margin: 0 auto 12px; border-radius: 50%; background: white; }
+.admin-mobile-card h1 { font-size: 28px; margin: 0 0 8px; }
+.admin-shell {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  min-height: 100svh;
+  background: #f3eee4;
+}
+.admin-sidebar {
+  display: flex;
+  flex-direction: column;
+  background: var(--navy);
+  color: #f4efe4;
+  padding: 22px 16px;
+}
+.admin-brand {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  color: white;
+  text-decoration: none;
+  margin-bottom: 28px;
+}
+.admin-brand img { width: 42px; height: 42px; border-radius: 50%; background: white; }
+.admin-brand strong { display: block; font-size: 15px; }
+.admin-brand small { color: #d7c7a2; font-size: 12px; }
+.admin-sidebar nav { display: grid; gap: 4px; }
+.admin-sidebar nav a {
+  color: #f4efe4;
+  text-decoration: none;
+  padding: 10px 12px;
+  border-radius: 10px;
+  font-size: 14px;
+}
+.admin-sidebar nav a.is-on { background: rgba(255,255,255,0.1); color: var(--gold); }
+.admin-sidebar-foot {
+  margin-top: auto;
+  display: grid;
+  gap: 8px;
+  padding-top: 20px;
+}
+.admin-sidebar-foot a, .admin-sidebar-foot button {
+  background: none;
+  border: 0;
+  color: #d7c7a2;
+  text-align: left;
+  font: inherit;
+  font-size: 13px;
+  cursor: pointer;
+  padding: 0;
+}
+.admin-main { padding: 36px 40px 48px; min-width: 0; }
+.admin-main h1 { margin: 0 0 8px; font-size: 40px; }
+.admin-lead { max-width: 60ch; color: var(--muted); margin-bottom: 24px; }
+.admin-kicker {
+  margin: 0 0 8px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--gold-deep);
+}
+.admin-grid-2 { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+.admin-grid-3 { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+.admin-card {
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 18px;
+  display: grid;
+  gap: 12px;
+}
+.admin-card h2 { margin: 0; font-size: 22px; }
+.admin-preview {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+.admin-preview.small { height: 120px; }
+.admin-field { display: grid; gap: 6px; font-size: 13px; font-weight: 650; color: var(--navy); }
+.admin-field input, .admin-field textarea, .admin-field select {
+  font: inherit;
+  font-weight: 400;
+  padding: 10px 12px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: #fff;
+}
+.admin-status { margin: 0; font-size: 14px; color: var(--green-deep); }
+.admin-status.error { color: #8d2b2b; }
+.admin-stat {
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 20px;
+  text-decoration: none;
+  color: inherit;
+}
+.admin-stat strong {
+  display: block;
+  font-family: var(--font-display), Georgia, serif;
+  font-size: 32px;
+  color: var(--navy);
+}
+.admin-login {
+  min-height: 100svh;
+  display: grid;
+  place-items: center;
+  background:
+    linear-gradient(135deg, rgba(7, 25, 42, 0.88), rgba(11, 36, 56, 0.76)),
+    url("/images/gallery/idpd-2021-group.jpg") center / cover;
+  padding: 24px;
+}
+.admin-login-card {
+  width: min(100%, 420px);
+  background: var(--sand);
+  border-radius: 20px;
+  padding: 28px 24px;
+  display: grid;
+  gap: 12px;
+}
+.admin-login-card img { width: 56px; height: 56px; border-radius: 50%; background: white; }
+.admin-login-card h1 { margin: 0; }
+.admin-row-actions { display: flex; gap: 8px; }
+.admin-event-list { display: grid; gap: 16px; margin-top: 16px; }
+.admin-region-tabs { max-width: 320px; margin-bottom: 16px; }
+.admin-section-title { margin: 28px 0 10px; font-size: 28px; }
+.admin-history { display: grid; gap: 10px; }
+.admin-history-row {
+  display: grid;
+  grid-template-columns: 88px 1fr auto;
+  gap: 14px;
+  align-items: center;
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 12px;
+}
+.admin-history-row img, .admin-history-ph {
+  width: 88px;
+  height: 64px;
+  object-fit: cover;
+  border-radius: 10px;
+  background: var(--navy);
+}
+.admin-history-row h3 { margin: 0 0 4px; font-size: 20px; }
+.admin-history-row p { margin: 0; font-size: 14px; }
+.admin-modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 80;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: rgba(7, 25, 42, 0.72);
+  backdrop-filter: blur(4px);
+}
+.admin-modal {
+  position: relative;
+  width: min(100%, 560px);
+  max-height: min(90vh, 760px);
+  overflow: auto;
+  padding: 28px 24px 22px;
+  background: var(--sand);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  box-shadow: 0 24px 64px rgba(7, 25, 42, 0.35);
+}
+.admin-modal h2 { margin: 0 0 14px; font-size: 28px; }
+.admin-modal-form { display: grid; gap: 12px; }
+.admin-quota {
+  margin-bottom: 22px;
+  padding: 14px 16px;
+  border-radius: 14px;
+  border: 1px solid var(--line);
+  background: white;
+}
+.admin-quota-top {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: 13px;
+  margin-bottom: 8px;
+}
+.admin-quota-bar {
+  height: 8px;
+  border-radius: 999px;
+  background: #efe8d8;
+  overflow: hidden;
+}
+.admin-quota-bar i {
+  display: block;
+  height: 100%;
+  background: var(--green);
+}
+.admin-quota.is-warn .admin-quota-bar i { background: var(--gold-deep); }
+.admin-quota.is-locked {
+  border-color: #e0b4b4;
+  background: #fdf6f6;
+}
+.admin-quota.is-locked .admin-quota-bar i { background: #8d2b2b; }
+.admin-quota p { margin: 8px 0 0; font-size: 13px; }
+
+@media (max-width: 960px) {
+  .admin-desktop-only { display: none !important; }
+  .admin-mobile-block { display: grid; }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .society-option { transition: none; }
   .topbar { transition: none; }

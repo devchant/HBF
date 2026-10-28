@@ -1,7 +1,9 @@
 import Link from "next/link";
 import { Icon } from "@/components/Icon";
 import { SITE } from "@/lib/links";
+import { EventBoard } from "@/components/EventBoard";
 import { Reveal } from "@/components/Reveal";
+import { getEvents, getHero } from "@/lib/cms";
 
 export const metadata = {
   title: "Programs",
@@ -10,11 +12,14 @@ export const metadata = {
 
 const REP = "Representative image for Surrey community work — not a specific HBF event photo";
 
-export default function CanadaProgramsPage() {
+export const dynamic = "force-dynamic";
+
+export default async function CanadaProgramsPage() {
+  const [events, banner] = await Promise.all([getEvents("ca"), getHero("ca", "programs")]);
   return (
     <main>
       <section className="photo-hero">
-        <img src="/images/ca/packing.jpg" alt={REP} />
+        <img src={banner.imageUrl} alt={banner.alt} />
         <div className="wrap photo-hero-bar">
           <h1>Surrey programs</h1>
           <p>HBF Canada Society</p>
@@ -32,8 +37,12 @@ export default function CanadaProgramsPage() {
               <a href={SITE.canada.href}>{SITE.canada.label}</a>.
             </p>
           </Reveal>
-
-          <article className="feature-drive" style={{ marginTop: 22 }} id="hampers">
+        </div>
+      </section>
+      <EventBoard events={events} heading="Surrey events." />
+      <section className="section" style={{ paddingTop: 12 }}>
+        <div className="wrap">
+          <article className="feature-drive" id="hampers">
             <Reveal>
               <p className="kicker">Livelihood · Surrey</p>
               <h2>Surrey food hampers.</h2>

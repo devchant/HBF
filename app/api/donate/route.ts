@@ -1,4 +1,6 @@
 import { NextResponse } from "next/server";
+import { createAdminClient, DONATION_PROOF_BUCKET, isSupabaseConfigured } from "@/lib/supabase/admin";
+import { getMediaQuota, uploadBlockedReason } from "@/lib/storage-quota";
 
 const MAX_BYTES = 8 * 1024 * 1024;
 const ALLOWED_TYPES = new Set([
@@ -9,8 +11,20 @@ const ALLOWED_TYPES = new Set([
   "application/pdf",
 ]);
 
+function safeFileName(name: string) {
+  const base = name.replace(/[^a-zA-Z0-9._-]/g, "_").slice(0, 80);
+  return base || "proof";
+}
+
 export async function POST(request: Request) {
   try {
+    if (!isSupabaseConfigured()) {
+      return NextResponse.json(
+        { error: "Donations are not connected yet. Set Supabase keys on the server." },
+        { status: 503 },
+      );
+    }
+
     const form = await request.formData();
     const region = String(form.get("region") ?? "");
     const anonymous = form.get("anonymous") === "true";
@@ -46,18 +60,49 @@ export async function POST(request: Request) {
     }
 
     const reference = `HBF-${region.toUpperCase()}-${Date.now().toString(36)}`;
+    const currency = region === "ng" ? "NGN" : "CAD";
+    const proofPath = `${region}/${reference}/${safeFileName(proof.name)}`;
+    const supabase = createAdminClient();
+    try {
+      const quota = await getMediaQuota(supabase);
+      const blocked = uploadBlockedReason(quota, proof.size);
+      if (blocked) {
+        return NextResponse.json(
+          { error: "Storage is full. HBF cannot accept proof uploads right now." },
+          { status: 503 },
+        );
+      }
+    } catch {
+      return NextResponse.json({ error: "Could not check storage space." }, { status: 500 });
+    }
+    const fileBytes = Buffer.from(await proof.arrayBuffer());
 
-    console.info("[donate]", {
+    const { error: uploadError } = await supabase.storage
+      .from(DONATION_PROOF_BUCKET)
+      .upload(proofPath, fileBytes, { contentType: proof.type, upsert: false });
+
+    if (uploadError) {
+      console.error("[donate] storage", uploadError.message);
+      return NextResponse.json({ error: "Could not save proof of payment." }, { status: 500 });
+    }
+
+    const { error: insertError } = await supabase.from("donations").insert({
       reference,
       region,
       anonymous,
-      donorName: anonymous ? undefined : donorName,
-      email: anonymous ? email : email || undefined,
+      donor_name: anonymous ? null : donorName,
+      email: email || null,
       amount,
-      proofName: proof.name,
-      proofSize: proof.size,
-      proofType: proof.type,
+      currency,
+      proof_path: proofPath,
+      proof_mime: proof.type,
     });
+
+    if (insertError) {
+      console.error("[donate] insert", insertError.message);
+      await supabase.storage.from(DONATION_PROOF_BUCKET).remove([proofPath]);
+      return NextResponse.json({ error: "Could not save your donation." }, { status: 500 });
+    }
 
     return NextResponse.json({
       ok: true,

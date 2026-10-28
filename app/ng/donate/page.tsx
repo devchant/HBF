@@ -3,6 +3,7 @@ import Link from "next/link";
 import { DonatePanel } from "@/components/DonatePanel";
 import { Icon } from "@/components/Icon";
 import { Reveal } from "@/components/Reveal";
+import { getDonateAccount } from "@/lib/cms";
 
 export const metadata: Metadata = {
   title: "Donate",
@@ -10,7 +11,10 @@ export const metadata: Metadata = {
     "Give to HBF Nigeria for the December 2026 widows outreach in Abuja. Transfer to the HBF Nigeria account and submit proof of payment.",
 };
 
-export default function DonateNigeriaPage() {
+export const dynamic = "force-dynamic";
+
+export default async function DonateNigeriaPage() {
+  const account = await getDonateAccount("ng");
   return (
     <main>
       <section className="photo-hero">
@@ -57,7 +61,7 @@ export default function DonateNigeriaPage() {
 
           <div className="grid-2" style={{ marginTop: 18 }}>
             <Reveal>
-              <DonatePanel region="ng" />
+              <DonatePanel region="ng" account={account} />
             </Reveal>
             <article className="card">
               <Reveal>

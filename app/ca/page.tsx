@@ -1,15 +1,20 @@
 import Link from "next/link";
+import { EventBoard } from "@/components/EventBoard";
 import { Icon } from "@/components/Icon";
 import { SITE } from "@/lib/links";
 import { Reveal } from "@/components/Reveal";
+import { getEvents, getHero } from "@/lib/cms";
 
 const REP = "Representative image for Surrey community work — not a specific HBF event photo";
 
-export default function CanadaHomePage() {
+export const dynamic = "force-dynamic";
+
+export default async function CanadaHomePage() {
+  const [hero, events] = await Promise.all([getHero("ca"), getEvents("ca")]);
   return (
     <main>
       <section className="home-hero">
-        <img src="/images/ca/neighbourhood.jpg" alt={REP} />
+        <img src={hero.imageUrl} alt={hero.alt} />
         <div className="wrap home-hero-bar">
           <div>
             <p className="kicker rise d1">Surrey · British Columbia</p>
@@ -94,6 +99,8 @@ export default function CanadaHomePage() {
           </div>
         </div>
       </section>
+
+      <EventBoard events={events} heading="Surrey events." />
 
       <section className="section" style={{ paddingTop: 0 }} id="surrey-preview">
         <div className="wrap">

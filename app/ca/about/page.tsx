@@ -2,6 +2,7 @@ import Link from "next/link";
 import { Icon } from "@/components/Icon";
 import { SITE } from "@/lib/links";
 import { Reveal } from "@/components/Reveal";
+import { getHero } from "@/lib/cms";
 
 export const metadata = {
   title: "About",
@@ -11,11 +12,14 @@ export const metadata = {
 
 const REP = "Representative image for Surrey community work — not a specific HBF event photo";
 
-export default function CanadaAboutPage() {
+export const dynamic = "force-dynamic";
+
+export default async function CanadaAboutPage() {
+  const banner = await getHero("ca", "about");
   return (
     <main>
       <section className="photo-hero">
-        <img src="/images/ca/neighbourhood.jpg" alt={REP} />
+        <img src={banner.imageUrl} alt={banner.alt} />
         <div className="wrap photo-hero-bar">
           <h1>About</h1>
           <p>Canada society</p>

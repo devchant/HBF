@@ -3,13 +3,17 @@ import { DonatePanel } from "@/components/DonatePanel";
 import { Icon } from "@/components/Icon";
 import { SITE } from "@/lib/links";
 import { Reveal } from "@/components/Reveal";
+import { getDonateAccount } from "@/lib/cms";
 
 export const metadata = {
   title: "Donate in Canada",
   description: `Give to HBF Canada Society in Surrey. Transfer and submit proof of payment on ${SITE.canada.label}.`,
 };
 
-export default function CanadaDonatePage() {
+export const dynamic = "force-dynamic";
+
+export default async function CanadaDonatePage() {
+  const account = await getDonateAccount("ca");
   return (
     <main>
       <section className="photo-hero">
@@ -54,7 +58,7 @@ export default function CanadaDonatePage() {
 
           <div className="grid-2" style={{ marginTop: 18 }} id="give">
             <Reveal>
-              <DonatePanel region="ca" />
+              <DonatePanel region="ca" account={account} />
             </Reveal>
             <article className="card">
               <Reveal>

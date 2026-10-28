@@ -3,6 +3,7 @@ import Link from "next/link";
 import { SITE } from "@/lib/links";
 import { Icon } from "@/components/Icon";
 import { Reveal } from "@/components/Reveal";
+import { getHero } from "@/lib/cms";
 
 export const metadata: Metadata = {
   title: "About us",
@@ -10,14 +11,14 @@ export const metadata: Metadata = {
     "HBF Nigeria: CAC/IT/167408, SCUML, UN ECOSOC Special Consultative Status since 21 July 2026.",
 };
 
-export default function NigeriaAboutPage() {
+export const dynamic = "force-dynamic";
+
+export default async function NigeriaAboutPage() {
+  const banner = await getHero("ng", "about");
   return (
     <main>
       <section className="photo-hero">
-        <img
-          src="/images/gallery/idpd-2021-high-table.jpg"
-          alt="HBF leadership at the IDPD 2021 high table in Warri"
-        />
+        <img src={banner.imageUrl} alt={banner.alt} />
         <div className="wrap photo-hero-bar">
           <h1>About</h1>
           <p>Nigeria</p>

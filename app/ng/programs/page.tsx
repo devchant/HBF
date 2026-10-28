@@ -2,8 +2,10 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { SITE } from "@/lib/links";
 import { Icon } from "@/components/Icon";
+import { EventBoard } from "@/components/EventBoard";
 import { ProgramFilters } from "@/components/ProgramFilters";
 import { Reveal } from "@/components/Reveal";
+import { getEvents, getHero } from "@/lib/cms";
 
 export const metadata: Metadata = {
   title: "Programs",
@@ -11,14 +13,14 @@ export const metadata: Metadata = {
     "HBF programs: Free Massage Movement in Warri, IDPD 2021 disability aid, children's ward visitation, and the December 2026 widows outreach in Abuja.",
 };
 
-export default function ProgramsPage() {
+export const dynamic = "force-dynamic";
+
+export default async function ProgramsPage() {
+  const [events, banner] = await Promise.all([getEvents("ng"), getHero("ng", "programs")]);
   return (
     <main>
       <section className="photo-hero">
-        <img
-          src="/images/gallery/idpd-2021-mobility.jpg"
-          alt="Wheelchairs and crutches at the IDPD 2021 gathering in Warri"
-        />
+        <img src={banner.imageUrl} alt={banner.alt} />
         <div className="wrap photo-hero-bar">
           <h1>Programs</h1>
           <p>Warri and Abuja</p>
@@ -36,6 +38,11 @@ export default function ProgramsPage() {
             </p>
           </Reveal>
           <ProgramFilters />
+        </div>
+      </section>
+      <EventBoard events={events} heading="Upcoming and current events." />
+      <section className="section" style={{ paddingTop: 12 }}>
+        <div className="wrap">
 
           <article className="feature-drive" id="abuja-card" data-program="upcoming">
             <Reveal>

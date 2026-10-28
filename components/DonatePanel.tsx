@@ -2,7 +2,7 @@
 
 import { useCallback, useEffect, useRef, useState } from "react";
 import { Icon } from "@/components/Icon";
-import { DONATE_ACCOUNTS } from "@/lib/donate-accounts";
+import type { DonateAccount } from "@/lib/donate-accounts";
 import { SITE } from "@/lib/links";
 import type { SiteRegion } from "@/lib/site";
 
@@ -10,10 +10,10 @@ type Tab = "named" | "anonymous";
 
 type DonatePanelProps = {
   region: SiteRegion;
+  account: DonateAccount;
 };
 
-export function DonatePanel({ region }: DonatePanelProps) {
-  const account = DONATE_ACCOUNTS[region];
+export function DonatePanel({ region, account }: DonatePanelProps) {
   const contactEmail = region === "ng" ? SITE.nigeria.email : undefined;
   const [open, setOpen] = useState(false);
   const [tab, setTab] = useState<Tab>("named");

@@ -18,3 +18,9 @@ npm run dev
 ```
 
 Open http://127.0.0.1:5173/
+
+## Admin
+
+Desktop only: http://127.0.0.1:5173/admin
+
+Hero images, donate account details, and events for Nigeria and Canada are stored in Supabase. Local secrets live in `.env` (not committed).

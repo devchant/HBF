@@ -1,17 +1,19 @@
 import Link from "next/link";
+import { EventBoard } from "@/components/EventBoard";
 import { Icon } from "@/components/Icon";
 import { SITE } from "@/lib/links";
 import { Reveal } from "@/components/Reveal";
 import { StatCounter } from "@/components/StatCounter";
+import { getEvents, getHero } from "@/lib/cms";
 
-export default function HomePage() {
+export const dynamic = "force-dynamic";
+
+export default async function HomePage() {
+  const [hero, events] = await Promise.all([getHero("ng"), getEvents("ng")]);
   return (
     <main>
       <section className="home-hero">
-        <img
-          src="/images/gallery/idpd-2021-group.jpg"
-          alt="HBF at IDPD 2021 in Warri, with the collaboration banner naming HBF, EGDAI, and CEPEJ"
-        />
+        <img src={hero.imageUrl} alt={hero.alt} />
         <div className="wrap home-hero-bar">
           <div>
             <p className="kicker rise d1">Warri · Abuja</p>
@@ -112,6 +114,8 @@ export default function HomePage() {
           </Reveal>
         </div>
       </section>
+
+      <EventBoard events={events} heading="Upcoming and current events." />
 
       <section className="section" style={{ paddingTop: 0 }}>
         <div className="wrap">
