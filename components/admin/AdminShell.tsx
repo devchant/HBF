@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
+import { SITE } from "@/lib/links";
 import { formatBytes, type MediaQuota } from "@/lib/storage-quota";
 
 const NAV = [
@@ -63,10 +64,10 @@ export function AdminShell({ children }: { children: React.ReactNode }) {
             ))}
           </nav>
           <div className="admin-sidebar-foot">
-            <a href="/ng" target="_blank" rel="noreferrer">
+            <a href={SITE.nigeria.href} target="_blank" rel="noreferrer">
               View Nigeria
             </a>
-            <a href="/ca" target="_blank" rel="noreferrer">
+            <a href={SITE.canada.href} target="_blank" rel="noreferrer">
               View Canada
             </a>
             <button type="button" onClick={logout}>

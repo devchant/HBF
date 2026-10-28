@@ -1,11 +1,12 @@
 import Link from "next/link";
 import { SITE } from "@/lib/links";
-import type { SiteRegion } from "@/lib/site";
-import { siteBase } from "@/lib/site";
+import type { SiteRegion, UrlMode } from "@/lib/site";
+import { otherSocietyHref, siteBase } from "@/lib/site";
 
-export function SiteFooter({ region }: { region: SiteRegion }) {
-  const base = siteBase(region);
-  const other = region === "ng" ? "/ca" : "/ng";
+export function SiteFooter({ region, urlMode = "prefixed" }: { region: SiteRegion; urlMode?: UrlMode }) {
+  const base = siteBase(region, urlMode);
+  const other = otherSocietyHref(region, urlMode);
+  const otherIsExternal = urlMode === "bare";
 
   if (region === "ng") {
     return (
@@ -29,7 +30,12 @@ export function SiteFooter({ region }: { region: SiteRegion }) {
           <RevealBlock title="Affiliation">
             <p>
               HBF Canada Society (S0086143) is a separate legal entity in Surrey. Gifts are accounted separately.{" "}
-              <Link href={other}>Visit the Canada site</Link>.
+              {otherIsExternal ? (
+                <a href={other}>Visit the Canada site</a>
+              ) : (
+                <Link href={other}>Visit the Canada site</Link>
+              )}
+              .
             </p>
           </RevealBlock>
         </div>
@@ -61,7 +67,13 @@ export function SiteFooter({ region }: { region: SiteRegion }) {
         <RevealBlock title="Affiliation">
           <p>
             Affiliated with HBF Nigeria. A gift to this society stays with HBF Canada Society unless a future grant to
-            Nigeria is approved and recorded separately. <Link href={other}>Visit the Nigeria site</Link>.
+            Nigeria is approved and recorded separately.{" "}
+            {otherIsExternal ? (
+              <a href={other}>Visit the Nigeria site</a>
+            ) : (
+              <Link href={other}>Visit the Nigeria site</Link>
+            )}
+            .
           </p>
         </RevealBlock>
       </div>
@@ -72,7 +84,7 @@ export function SiteFooter({ region }: { region: SiteRegion }) {
   );
 }
 
-function RevealBlock({ title, children }: { title: string; children: React.ReactNode }) {
+function RevealBlock({ title, children }: { title: string; children: import("react").ReactNode }) {
   return (
     <div>
       <h2>{title}</h2>
