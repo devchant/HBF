@@ -8,6 +8,7 @@ import { formatBytes, type MediaQuota } from "@/lib/storage-quota";
 const NAV = [
   { href: "/admin", label: "Overview" },
   { href: "/admin/heroes", label: "Page images" },
+  { href: "/admin/gallery", label: "Gallery" },
   { href: "/admin/accounts", label: "Bank accounts" },
   { href: "/admin/events", label: "Events" },
 ];

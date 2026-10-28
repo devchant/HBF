@@ -276,7 +276,7 @@ function EventRow({
   onArchive,
 }: {
   event: SiteEvent;
-  onSave: (id: string, form: FormData) => Promise<void>;
+  onSave: (id: string, form: FormData) => Promise<boolean | void>;
   onArchive: (id: string) => Promise<void>;
 }) {
   return (

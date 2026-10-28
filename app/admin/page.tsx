@@ -20,6 +20,10 @@ export default async function AdminHomePage() {
           <strong>Accounts</strong>
           <span>Bank details on donate pages</span>
         </Link>
+        <Link className="admin-stat" href="/admin/gallery">
+          <strong>Gallery</strong>
+          <span>Nigeria and Canada photographs</span>
+        </Link>
         <Link className="admin-stat" href="/admin/events">
           <strong>{ngEvents.length + caEvents.length}</strong>
           <span>Published events</span>

@@ -3,9 +3,10 @@ import Link from "next/link";
 import { SITE } from "@/lib/links";
 import { Icon } from "@/components/Icon";
 import { EventBoard } from "@/components/EventBoard";
+import { GalleryWall } from "@/components/GalleryWall";
 import { ProgramFilters } from "@/components/ProgramFilters";
 import { Reveal } from "@/components/Reveal";
-import { getEvents, getHero } from "@/lib/cms";
+import { getEvents, getGallery, getHero } from "@/lib/cms";
 
 export const metadata: Metadata = {
   title: "Programs",
@@ -16,7 +17,11 @@ export const metadata: Metadata = {
 export const dynamic = "force-dynamic";
 
 export default async function ProgramsPage() {
-  const [events, banner] = await Promise.all([getEvents("ng"), getHero("ng", "programs")]);
+  const [events, banner, photos] = await Promise.all([
+    getEvents("ng"),
+    getHero("ng", "programs"),
+    getGallery("ng"),
+  ]);
   return (
     <main>
       <section className="photo-hero">
@@ -281,44 +286,7 @@ export default async function ProgramsPage() {
               Pictures from IDPD 2021 and the children&apos;s ward visit in Warri. The Abuja outreach is still ahead.
             </p>
           </Reveal>
-          <div className="gallery-wall">
-            <figure>
-              <img src="/images/gallery/idpd-2021-group.jpg" alt="HBF at IDPD 2021 Warri - HBF logo on collaboration banner with EGDAI and CEPEJ - ECOSOC accredited NGO Nigeria" />
-              <figcaption>HBF at IDPD 2021 Warri — collaboration banner with EGDAI and CEPEJ</figcaption>
-            </figure>
-            <figure>
-              <img src="/images/gallery/idpd-2021-banner.jpg" alt="IDPD 2021 banner listing Humanitarian Betterment Foundation with partner organisations" />
-              <figcaption>Official banner naming HBF with EGDAI, CEPEJ, Shola Mese Foundation, FHOPAS, and NDI</figcaption>
-            </figure>
-            <figure>
-              <img src="/images/gallery/idpd-2021-high-table.jpg" alt="Speakers at the IDPD 2021 high table in Warri" />
-              <figcaption>HBF leadership on the high table at IDPD 2021</figcaption>
-            </figure>
-            <figure>
-              <img src="/images/gallery/idpd-2021-mobility.jpg" alt="Wheelchairs and crutches at the IDPD 2021 gathering in Warri" />
-              <figcaption>Mobility aids — wheelchairs and crutches</figcaption>
-            </figure>
-            <figure>
-              <img src="/images/gallery/idpd-2021-session.jpg" alt="Participants seated at the IDPD 2021 session in Warri" />
-              <figcaption>IDPD 2021 session on disability inclusion and participation</figcaption>
-            </figure>
-            <figure>
-              <img src="/images/gallery/hospital-childrens-ward.jpg" alt="HBF Hospital Visitation Paediatric Ward Warri - Child health outreach" />
-              <figcaption>Children&apos;s ward visitation, Warri</figcaption>
-            </figure>
-            <figure>
-              <img src="/images/gallery/hospital-handover.jpg" alt="HBF volunteers handing support bags to children's ward staff" />
-              <figcaption>Support items handed to children&apos;s ward staff</figcaption>
-            </figure>
-            <figure>
-              <img src="/images/gallery/hospital-ward.jpg" alt="HBF team inside the children's ward in Warri" />
-              <figcaption>Inside the children&apos;s ward</figcaption>
-            </figure>
-            <figure>
-              <img src="/images/gallery/hospital-supplies.jpg" alt="Bags of supplies prepared by HBF for the children's ward" />
-              <figcaption>Relief bags prepared for the children&apos;s ward</figcaption>
-            </figure>
-          </div>
+          <GalleryWall photos={photos} />
         </div>
       </section>
 

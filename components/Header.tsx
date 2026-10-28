@@ -20,7 +20,7 @@ function navLinks(region: SiteRegion, base: string) {
         ]
       : [
           { href: `${base}/programs`, label: "Programs" },
-          { href: `${base}/programs#surrey`, label: "Surrey programs" },
+          { href: `${base}/programs#gallery`, label: "Gallery" },
         ]),
     { href: other, label: otherLabel, switcher: true },
   ] as const;

@@ -2,8 +2,9 @@ import Link from "next/link";
 import { Icon } from "@/components/Icon";
 import { SITE } from "@/lib/links";
 import { EventBoard } from "@/components/EventBoard";
+import { GalleryWall } from "@/components/GalleryWall";
 import { Reveal } from "@/components/Reveal";
-import { getEvents, getHero } from "@/lib/cms";
+import { getEvents, getGallery, getHero } from "@/lib/cms";
 
 export const metadata = {
   title: "Programs",
@@ -15,7 +16,11 @@ const REP = "Representative image for Surrey community work — not a specific H
 export const dynamic = "force-dynamic";
 
 export default async function CanadaProgramsPage() {
-  const [events, banner] = await Promise.all([getEvents("ca"), getHero("ca", "programs")]);
+  const [events, banner, photos] = await Promise.all([
+    getEvents("ca"),
+    getHero("ca", "programs"),
+    getGallery("ca"),
+  ]);
   return (
     <main>
       <section className="photo-hero">
@@ -238,39 +243,8 @@ export default async function CanadaProgramsPage() {
               available.
             </p>
           </Reveal>
-          <div className="gallery-wall" style={{ marginTop: 22 }}>
-            <figure>
-              <img src="/images/ca/packing.jpg" alt={REP} />
-              <figcaption>Volunteer packing — representative</figcaption>
-            </figure>
-            <figure>
-              <img src="/images/ca/food-hampers.jpg" alt={REP} />
-              <figcaption>Food hampers — representative</figcaption>
-            </figure>
-            <figure>
-              <img src="/images/ca/neighbourhood.jpg" alt={REP} />
-              <figcaption>Neighbourhood gathering — representative</figcaption>
-            </figure>
-            <figure>
-              <img src="/images/ca/together.jpg" alt={REP} />
-              <figcaption>Inclusion — representative</figcaption>
-            </figure>
-            <figure>
-              <img src="/images/ca/produce.jpg" alt={REP} />
-              <figcaption>Essentials — representative</figcaption>
-            </figure>
-            <figure>
-              <img src="/images/ca/volunteers-team.jpg" alt={REP} />
-              <figcaption>Volunteer team — representative</figcaption>
-            </figure>
-            <figure>
-              <img src="/images/ca/newcomers.jpg" alt={REP} />
-              <figcaption>Welcome — representative</figcaption>
-            </figure>
-            <figure>
-              <img src="/images/ca/community-gathering.jpg" alt={REP} />
-              <figcaption>Community — representative</figcaption>
-            </figure>
+          <div style={{ marginTop: 22 }}>
+            <GalleryWall photos={photos} />
           </div>
         </div>
       </section>

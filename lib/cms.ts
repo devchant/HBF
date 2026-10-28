@@ -111,6 +111,35 @@ export async function getDonateAccount(region: SiteRegion): Promise<DonateAccoun
   };
 }
 
+export type GalleryPhoto = {
+  id: string;
+  region: SiteRegion;
+  imageUrl: string;
+  caption: string;
+  alt: string;
+  sortOrder: number;
+};
+
+export async function getGallery(region?: SiteRegion): Promise<GalleryPhoto[]> {
+  const supabase = createPublicClient();
+  if (!supabase) return [];
+  let query = supabase
+    .from("gallery")
+    .select("id, region, image_url, caption, alt, sort_order")
+    .order("sort_order", { ascending: true })
+    .order("created_at", { ascending: true });
+  if (region) query = query.eq("region", region);
+  const { data } = await query;
+  return (data ?? []).map((row) => ({
+    id: row.id,
+    region: row.region as SiteRegion,
+    imageUrl: row.image_url,
+    caption: row.caption ?? "",
+    alt: row.alt || row.caption || "Gallery photograph",
+    sortOrder: row.sort_order ?? 0,
+  }));
+}
+
 export async function getEvents(region: SiteRegion): Promise<SiteEvent[]> {
   const supabase = createPublicClient();
   if (!supabase) return [];

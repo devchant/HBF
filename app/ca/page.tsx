@@ -1,16 +1,17 @@
 import Link from "next/link";
 import { EventBoard } from "@/components/EventBoard";
+import { GalleryWall } from "@/components/GalleryWall";
 import { Icon } from "@/components/Icon";
 import { SITE } from "@/lib/links";
 import { Reveal } from "@/components/Reveal";
-import { getEvents, getHero } from "@/lib/cms";
+import { getEvents, getGallery, getHero } from "@/lib/cms";
 
 const REP = "Representative image for Surrey community work — not a specific HBF event photo";
 
 export const dynamic = "force-dynamic";
 
 export default async function CanadaHomePage() {
-  const [hero, events] = await Promise.all([getHero("ca"), getEvents("ca")]);
+  const [hero, events, photos] = await Promise.all([getHero("ca"), getEvents("ca"), getGallery("ca")]);
   return (
     <main>
       <section className="home-hero">
@@ -170,31 +171,8 @@ export default async function CanadaHomePage() {
             <p className="kicker">In pictures</p>
             <h2>Community, food, and gathering.</h2>
           </Reveal>
-          <div className="gallery-wall" style={{ marginTop: 22 }}>
-            <figure>
-              <img src="/images/ca/neighbourhood.jpg" alt={REP} />
-              <figcaption>Community gathering — representative</figcaption>
-            </figure>
-            <figure>
-              <img src="/images/ca/food-hampers.jpg" alt={REP} />
-              <figcaption>Food support — representative</figcaption>
-            </figure>
-            <figure>
-              <img src="/images/ca/packing.jpg" alt={REP} />
-              <figcaption>Volunteer packing — representative</figcaption>
-            </figure>
-            <figure>
-              <img src="/images/ca/together.jpg" alt={REP} />
-              <figcaption>Inclusion — representative</figcaption>
-            </figure>
-            <figure>
-              <img src="/images/ca/produce.jpg" alt={REP} />
-              <figcaption>Essentials — representative</figcaption>
-            </figure>
-            <figure>
-              <img src="/images/ca/newcomers.jpg" alt={REP} />
-              <figcaption>Welcome and belonging — representative</figcaption>
-            </figure>
+          <div style={{ marginTop: 22 }}>
+            <GalleryWall photos={photos} />
           </div>
         </div>
       </section>
