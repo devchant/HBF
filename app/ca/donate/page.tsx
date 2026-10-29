@@ -64,8 +64,8 @@ export default async function CanadaDonatePage() {
               <Reveal>
                 <h3>Nigeria gifts</h3>
                 <p>
-                  HBF Nigeria receives Nigeria donations separately. ECOSOC status applies to the Nigeria foundation
-                  only.
+                  HBF Nigeria receives Nigeria donations separately. Special Consultative Status with the Economic and
+                  Social Council applies to the Nigeria foundation only.
                 </p>
                 <Link className="btn" href="/ng/donate">
                   Nigeria donate page

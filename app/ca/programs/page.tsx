@@ -8,7 +8,7 @@ import { getEvents, getGallery, getHero } from "@/lib/cms";
 
 export const metadata = {
   title: "Programs",
-  description: `HBF Canada Society Surrey programs: food hampers, neighbourhood outreach, inclusion, and volunteers. Details also on ${SITE.canada.label}.`,
+  description: `HBF Canada Society Surrey programs: family hampers, Code for 1000 Children with Generation AI Surrey, neighbourhood outreach, inclusion, and volunteers.`,
 };
 
 const REP = "Representative image for Surrey community work — not a specific HBF event photo";
@@ -44,17 +44,16 @@ export default async function CanadaProgramsPage() {
           </Reveal>
         </div>
       </section>
-      <EventBoard events={events} heading="Surrey events." />
+      <EventBoard events={events} heading="Surrey events." location="Surrey, BC" />
       <section className="section" style={{ paddingTop: 12 }}>
         <div className="wrap">
           <article className="feature-drive" id="hampers">
             <Reveal>
-              <p className="kicker">Livelihood · Surrey</p>
-              <h2>Surrey food hampers.</h2>
+              <p className="kicker">Upcoming · Surrey, BC</p>
+              <h2>Canada Family Hamper Outreach.</h2>
               <p>
-                The Canada society organizes hamper-style food and household support for families facing hardship —
-                rice, staples, and basic essentials in the same livelihood spirit as HBF Nigeria&apos;s hamper work,
-                adapted for Surrey.
+                Comfort hampers for newcomer and low-income families in Surrey, BC. Pilot: 25 families. Status:
+                Upcoming – Date to be announced.
               </p>
               <div className="actions">
                 <Link className="btn gold" href="/ca/donate">
@@ -73,8 +72,8 @@ export default async function CanadaProgramsPage() {
                 <span>primary service area</span>
               </div>
               <div>
-                <strong>Food</strong>
-                <span>hampers and household items</span>
+                <strong>25</strong>
+                <span>families in the pilot</span>
               </div>
               <div>
                 <strong>BC</strong>
@@ -90,8 +89,8 @@ export default async function CanadaProgramsPage() {
                 <span className="chip">Livelihood</span>
               </div>
               <div className="campaign-body">
-                <h2>Food hampers</h2>
-                <p>Hamper-style food and household items for Surrey households facing hardship.</p>
+                <h2>Canada Family Hamper Outreach</h2>
+                <p>Comfort hampers for newcomer and low-income families in Surrey, BC. Pilot: 25 families.</p>
                 <div className="meta-row">
                   <span>Surrey</span>
                   <span>Essentials</span>
@@ -123,6 +122,23 @@ export default async function CanadaProgramsPage() {
                 <div className="meta-row">
                   <span>Inclusion</span>
                   <span>BC</span>
+                </div>
+              </div>
+            </a>
+            <a className="campaign" href="#coding">
+              <div className="campaign-media">
+                <img src="/images/ca/community-gathering.jpg" alt={REP} />
+                <span className="chip">SDG 4</span>
+              </div>
+              <div className="campaign-body">
+                <h2>Code for 1000 Children</h2>
+                <p>
+                  Digital literacy and AI coding for 1000 children and youth in Surrey by 2028, in partnership with
+                  Generation AI Surrey.
+                </p>
+                <div className="meta-row">
+                  <span>Pilot: 10 learners</span>
+                  <span>2027–2029</span>
                 </div>
               </div>
             </a>
@@ -201,14 +217,33 @@ export default async function CanadaProgramsPage() {
                 <h2>Participation for everyone</h2>
                 <p>
                   HBF Nigeria&apos;s disability-inclusion work inspires how the Canada society designs accessible
-                  gatherings and volunteer roles for newcomers, seniors, and people with disabilities. ECOSOC status
-                  remains with HBF Nigeria only.
+                  gatherings and volunteer roles for newcomers, seniors, and people with disabilities. Special
+                  Consultative Status with the Economic and Social Council remains with HBF Nigeria only.
                 </p>
               </Reveal>
             </div>
           </article>
 
-          <article className="program-story reverse" id="volunteers">
+          <article className="program-story reverse" id="coding">
+            <div className="shot-grid">
+              <img className="lead" src="/images/ca/community-gathering.jpg" alt={REP} />
+              <img src="/images/ca/together.jpg" alt={REP} />
+              <img src="/images/ca/newcomers.jpg" alt={REP} />
+            </div>
+            <div className="program-copy">
+              <Reveal>
+                <p className="eyebrow">Upcoming · Surrey, BC · SDG 4</p>
+                <h2>Code for 1000 Children</h2>
+                <p>
+                  Digital literacy and coding for 1000 children and youth in Surrey by 2028, in line with SDG 4 Quality
+                  Education, in partnership with Generation AI Surrey. Starting with a pilot cohort of 10 learners.
+                </p>
+                <p className="impact">Goal: 2027-2029 | Pilot: 10 learners. Status: Upcoming – Date to be announced.</p>
+              </Reveal>
+            </div>
+          </article>
+
+          <article className="program-story" id="volunteers">
             <div className="shot-grid">
               <img className="lead" src="/images/ca/volunteers-team.jpg" alt={REP} />
               <img src="/images/ca/packing.jpg" alt={REP} />

@@ -50,7 +50,10 @@ export function SocietyPicker() {
             <Link className="society-option society-option-ng" href="/ng">
               <span className="society-option-tag">Nigeria</span>
               <strong>HBF Nigeria</strong>
-              <span>UN ECOSOC since 21 July 2026 · Warri &amp; Abuja · CAC/IT/167408</span>
+              <span>
+                Special Consultative Status with the Economic and Social Council since 2025 · Warri &amp; Abuja ·
+                CAC/IT/167408
+              </span>
               <span className="society-option-cta">
                 Continue to Nigeria
                 <Icon name="arrow" />
@@ -58,7 +61,7 @@ export function SocietyPicker() {
             </Link>
             <Link className="society-option society-option-ca" href="/ca">
               <span className="society-option-tag">Canada</span>
-              <strong>HBF Canada Society</strong>
+              <strong>Humanitarian Betterment Foundation Canada Society</strong>
               <span>Surrey, BC · Registration S0086143 · CRA application in progress</span>
               <span className="society-option-cta">
                 Continue to Canada

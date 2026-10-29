@@ -11,6 +11,7 @@ const NAV = [
   { href: "/admin/heroes", label: "Page images" },
   { href: "/admin/gallery", label: "Gallery" },
   { href: "/admin/accounts", label: "Bank accounts" },
+  { href: "/admin/donations", label: "Donations" },
   { href: "/admin/events", label: "Events" },
 ];
 

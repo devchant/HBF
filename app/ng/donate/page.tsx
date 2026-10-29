@@ -67,7 +67,8 @@ export default async function DonateNigeriaPage() {
               <Reveal>
                 <h3>Who receives the gift</h3>
                 <p>
-                  HBF Nigeria. CAC/IT/167408. SCUML. Special Consultative Status with UN ECOSOC since 21 July 2026.
+                  HBF Nigeria. CAC/IT/167408 | SCUML compliant. Humanitarian Betterment Foundation in Special
+                  Consultative Status with the Economic and Social Council since 2025.
                 </p>
                 <p className="notice">
                   <strong>Canada gifts.</strong> HBF Canada Society receives donations separately on{" "}

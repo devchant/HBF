@@ -1,11 +1,16 @@
 import { AdminShell } from "@/components/admin/AdminShell";
 import { getEvents } from "@/lib/cms";
+import { getDonationCounts } from "@/lib/donations";
 import Link from "next/link";
 
 export const dynamic = "force-dynamic";
 
 export default async function AdminHomePage() {
-  const [ngEvents, caEvents] = await Promise.all([getEvents("ng"), getEvents("ca")]);
+  const [ngEvents, caEvents, donationCounts] = await Promise.all([
+    getEvents("ng"),
+    getEvents("ca"),
+    getDonationCounts(),
+  ]);
   return (
     <AdminShell>
       <p className="admin-kicker">Dashboard</p>
@@ -23,6 +28,12 @@ export default async function AdminHomePage() {
         <Link className="admin-stat" href="/admin/gallery">
           <strong>Gallery</strong>
           <span>Nigeria and Canada photographs</span>
+        </Link>
+        <Link className="admin-stat" href="/admin/donations">
+          <strong>{donationCounts.pending}</strong>
+          <span>
+            Payments to confirm ({donationCounts.nigeria} Nigeria, {donationCounts.canada} Canada)
+          </span>
         </Link>
         <Link className="admin-stat" href="/admin/events">
           <strong>{ngEvents.length + caEvents.length}</strong>

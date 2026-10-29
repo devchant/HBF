@@ -36,9 +36,9 @@ export default async function HomePage() {
         <StatCounter value={50} suffix="+" label="People served at the Free Massage Movement, Delta Mall, Warri" />
         <StatCounter value={100} suffix="+" label="Participants sensitized on disability inclusion at IDPD 2021" />
         <StatCounter
-          value={2026}
+          value={2025}
           grouping={false}
-          label="Year HBF Nigeria received UN ECOSOC Special Consultative Status"
+          label="Year HBF Nigeria was granted Special Consultative Status with the Economic and Social Council"
         />
       </section>
 
@@ -104,8 +104,8 @@ export default async function HomePage() {
               Disabilities, with people who needed wheelchairs and crutches. The photographs are from those days.
             </p>
             <p className="notice">
-              <strong>ECOSOC status.</strong> Special Consultative Status with UN ECOSOC is held by HBF Nigeria since
-              21 July 2026.
+              <strong>Consultative status.</strong> Humanitarian Betterment Foundation is in Special Consultative Status
+              with the Economic and Social Council since 2025.
             </p>
             <Link className="btn" href="/ng/about">
               Who we are

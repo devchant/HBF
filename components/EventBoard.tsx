@@ -1,15 +1,25 @@
 import type { SiteEvent } from "@/lib/cms";
 
-export function EventBoard({ events, heading }: { events: SiteEvent[]; heading: string }) {
+export function EventBoard({
+  events,
+  heading,
+  location,
+}: {
+  events: SiteEvent[];
+  heading: string;
+  location?: string;
+}) {
   const current = events.filter((event) => event.status !== "past");
   const history = events.filter((event) => event.status === "past");
   if (current.length === 0 && history.length === 0) return null;
 
   return (
     <>
-      {current.length > 0 ? <EventGrid events={current} kicker="Calendar" heading={heading} /> : null}
+      {current.length > 0 ? (
+        <EventGrid events={current} kicker="Calendar" heading={heading} location={location} />
+      ) : null}
       {history.length > 0 ? (
-        <EventGrid events={history} kicker="Archive" heading="Event history" />
+        <EventGrid events={history} kicker="Archive" heading="Event history" location={location} />
       ) : null}
     </>
   );
@@ -19,10 +29,12 @@ function EventGrid({
   events,
   kicker,
   heading,
+  location,
 }: {
   events: SiteEvent[];
   kicker: string;
   heading: string;
+  location?: string;
 }) {
   return (
     <section className="section" style={{ paddingTop: 0 }}>
@@ -40,13 +52,22 @@ function EventGrid({
                     <strong>{event.status === "upcoming" ? "Soon" : event.status === "ongoing" ? "Now" : "Past"}</strong>
                   </div>
                 )}
-                <span className="chip">{label(event.status)}</span>
+                <span className="chip">{chip(event.status, location)}</span>
               </div>
               <div className="campaign-body">
+                {location && event.status === "upcoming" ? (
+                  <p className="kicker">Upcoming · {location}</p>
+                ) : null}
                 <h2>{event.title}</h2>
                 {event.summary ? <p>{event.summary}</p> : null}
                 <div className="meta-row">
-                  {event.eventDate ? <span>{event.eventDate}</span> : <span>Date to be announced</span>}
+                  {event.eventDate ? (
+                    <span>{event.eventDate}</span>
+                  ) : (
+                    <span>
+                      {event.status === "upcoming" ? "Upcoming – Date to be announced" : "Date to be announced"}
+                    </span>
+                  )}
                 </div>
               </div>
             </article>
@@ -57,8 +78,8 @@ function EventGrid({
   );
 }
 
-function label(status: SiteEvent["status"]) {
-  if (status === "upcoming") return "Upcoming";
+function chip(status: SiteEvent["status"], location?: string) {
+  if (status === "upcoming") return location ? `Upcoming · ${location}` : "Upcoming";
   if (status === "ongoing") return "Ongoing";
   return "Past";
 }

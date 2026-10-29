@@ -8,7 +8,7 @@ import { getHero } from "@/lib/cms";
 export const metadata: Metadata = {
   title: "About us",
   description:
-    "HBF Nigeria: CAC/IT/167408, SCUML, UN ECOSOC Special Consultative Status since 21 July 2026.",
+    "HBF Nigeria: CAC/IT/167408, SCUML compliant. Special Consultative Status with the Economic and Social Council since 2025.",
 };
 
 export const dynamic = "force-dynamic";
@@ -39,7 +39,8 @@ export default async function NigeriaAboutPage() {
               has been in Warri, Delta State, with outreach planned for Abuja.
             </p>
             <p className="notice">
-              <strong>UN ECOSOC.</strong> HBF Nigeria received Special Consultative Status on 21 July 2026.
+              <strong>Consultative status.</strong> Humanitarian Betterment Foundation is in Special Consultative Status
+              with the Economic and Social Council since 2025.
             </p>
           </Reveal>
         </div>
@@ -61,8 +62,10 @@ export default async function NigeriaAboutPage() {
               <p>Health outreach in Warri: the Free Massage Movement at Delta Mall, and a children&apos;s ward visitation.</p>
             </article>
             <article>
-              <strong>21 July 2026</strong>
-              <p>HBF Nigeria received Special Consultative Status with UN ECOSOC.</p>
+              <strong>2025</strong>
+              <p>
+                Year HBF Nigeria was granted Special Consultative Status with the Economic and Social Council.
+              </p>
             </article>
             <article>
               <strong>December 2026</strong>
@@ -81,7 +84,11 @@ export default async function NigeriaAboutPage() {
               alt="Humanitarian Betterment Foundation wordmark"
             />
             <h3>HBF Nigeria</h3>
-            <p>CAC/IT/167408. SCUML. UN ECOSOC Special Consultative Status since 21 July 2026.</p>
+            <p>CAC/IT/167408 | SCUML compliant</p>
+            <p>
+              Humanitarian Betterment Foundation in Special Consultative Status with the Economic and Social Council
+              since 2025.
+            </p>
             <p>
               <a href={`mailto:${SITE.nigeria.email}`}>{SITE.nigeria.email}</a>
               <br />

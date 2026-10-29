@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     template: "%s | Humanitarian Betterment Foundation",
   },
   description:
-    "Humanitarian Betterment Foundation (HBF). UN ECOSOC Special Consultative Status, Nigeria, since 21 July 2026. Affiliated in Canada as HBF Canada Society, BC registration S0086143.",
+    "Humanitarian Betterment Foundation (HBF). Special Consultative Status with the Economic and Social Council, Nigeria, since 2025. Affiliated in Canada as Humanitarian Betterment Foundation Canada Society, BC registration S0086143.",
   icons: { icon: "/logo.png" },
 };
 

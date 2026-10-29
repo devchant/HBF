@@ -38,7 +38,8 @@ export default async function ProgramsPage() {
             <p className="kicker">The record</p>
             <h2>Four programs. Warri and Abuja.</h2>
             <p className="lead">
-              HBF Nigeria holds UN ECOSOC status. Public updates are also on{" "}
+              HBF Nigeria holds Special Consultative Status with the Economic and Social Council. Public updates are also
+              on{" "}
               <a href={SITE.nigeria.href}>{SITE.nigeria.label}</a>.
             </p>
           </Reveal>
@@ -173,7 +174,7 @@ export default async function ProgramsPage() {
               <img
                 className="lead"
                 src="/images/gallery/idpd-2021-group.jpg"
-                alt="HBF at IDPD 2021 Warri - HBF logo on collaboration banner with EGDAI and CEPEJ - ECOSOC accredited NGO Nigeria"
+                alt="HBF at IDPD 2021 Warri - HBF logo on collaboration banner with EGDAI and CEPEJ"
               />
               <img
                 src="/images/gallery/idpd-2021-banner.jpg"

@@ -71,7 +71,7 @@ export function DonatePanel({ region, account }: DonatePanelProps) {
     form.set("region", region);
     form.set("anonymous", tab === "anonymous" ? "true" : "false");
     if (tab === "named") form.set("donorName", donorName);
-    if (email.trim()) form.set("email", email.trim());
+    form.set("email", email.trim());
     form.set("amount", amount);
     if (proof) form.set("proof", proof);
 
@@ -215,15 +215,17 @@ export function DonatePanel({ region, account }: DonatePanelProps) {
                     </label>
                   ) : (
                     <label className="donate-field">
-                      <span>Email (optional)</span>
+                      <span>Email</span>
                       <input
                         type="email"
                         name="email"
+                        required
                         autoComplete="email"
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
-                        placeholder="Receipt or questions"
+                        placeholder="For your receipt"
                       />
+                      <small>Used to confirm your gift after HBF receives the transfer.</small>
                     </label>
                   )}
 

@@ -38,7 +38,8 @@ export default async function CanadaAboutPage() {
               Columbia Societies Act, registration S0086143.
             </p>
             <p className="notice">
-              <strong>ECOSOC status is held by HBF Nigeria only.</strong> This society does not hold UN ECOSOC status.
+              <strong>Consultative status is held by HBF Nigeria only.</strong> Humanitarian Betterment Foundation Canada
+              Society does not hold Special Consultative Status with the Economic and Social Council.
             </p>
           </Reveal>
         </div>
@@ -98,8 +99,9 @@ export default async function CanadaAboutPage() {
             <article>
               <strong>Surrey programs</strong>
               <p>
-                Food hampers, neighbourhood outreach, inclusion, and volunteers are listed on this site. Schedules are
-                also published at <a href={SITE.canada.href}>{SITE.canada.label}</a>.
+                Family hampers, Code for 1000 Children with Generation AI Surrey, neighbourhood outreach, inclusion, and
+                volunteers are listed on this site. Schedules are also published at{" "}
+                <a href={SITE.canada.href}>{SITE.canada.label}</a>.
               </p>
             </article>
           </div>
@@ -123,7 +125,9 @@ export default async function CanadaAboutPage() {
             <img src="/images/ca/community-gathering.jpg" alt={REP} />
             <Reveal>
               <h3>HBF Nigeria</h3>
-              <p>Warri and Abuja field programs, ECOSOC status, and Nigeria donations are on the Nigeria site.</p>
+              <p>
+                Warri and Abuja field programs, consultative status, and Nigeria donations are on the Nigeria site.
+              </p>
               <Link className="btn" href="/ng">
                 Visit Nigeria site
                 <Icon name="arrow" />

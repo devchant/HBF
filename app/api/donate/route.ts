@@ -39,11 +39,10 @@ export async function POST(request: Request) {
     if (!amount || Number.isNaN(Number(amount)) || Number(amount) <= 0) {
       return NextResponse.json({ error: "Enter a valid amount." }, { status: 400 });
     }
-    if (anonymous) {
-      if (!email || !email.includes("@")) {
-        return NextResponse.json({ error: "Email is required for anonymous gifts." }, { status: 400 });
-      }
-    } else if (!donorName) {
+    if (!email || !email.includes("@")) {
+      return NextResponse.json({ error: "Enter an email so we can confirm your gift." }, { status: 400 });
+    }
+    if (!anonymous && !donorName) {
       return NextResponse.json({ error: "Enter the donor name." }, { status: 400 });
     }
     if (!(proof instanceof File) || proof.size === 0) {

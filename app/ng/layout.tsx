@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     template: "%s | HBF Nigeria",
   },
   description:
-    "Humanitarian Betterment Foundation Nigeria. UN ECOSOC Special Consultative Status since 21 July 2026. Programs in Warri and Abuja.",
+    "Humanitarian Betterment Foundation Nigeria. Special Consultative Status with the Economic and Social Council since 2025. Programs in Warri and Abuja.",
 };
 
 export default async function NigeriaLayout({ children }: { children: React.ReactNode }) {

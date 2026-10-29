@@ -77,41 +77,41 @@ export default async function CanadaHomePage() {
               <img src="/images/ca/food-hampers.jpg" alt={REP} />
               <Reveal>
                 <div className="pillar-icon" aria-hidden="true">02</div>
-                <h3>Surrey food hampers</h3>
+                <h3>Canada Family Hamper Outreach</h3>
                 <p>
-                  Hamper-style food and household essentials for households facing hardship — the Canada society&apos;s
-                  livelihood program in Surrey.
+                  Comfort hampers for newcomer and low-income families in Surrey, BC. Pilot: 25 families. Date to be
+                  announced.
                 </p>
-                <Link href="/ca/programs#hampers">Food hamper program</Link>
+                <Link href="/ca/programs#hampers">Family hamper program</Link>
               </Reveal>
             </article>
             <article className="card">
               <img src="/images/ca/together.jpg" alt={REP} />
               <Reveal>
                 <div className="pillar-icon" aria-hidden="true">03</div>
-                <h3>Inclusion</h3>
+                <h3>Code for 1000 Children</h3>
                 <p>
-                  Activities that welcome newcomers, seniors, and people with disabilities — in the same spirit as HBF
-                  Nigeria&apos;s inclusion work, adapted for Canada.
+                  Digital literacy and AI coding for 1000 children and youth in Surrey by 2028, in partnership with
+                  Generation AI Surrey. Pilot: 10 learners.
                 </p>
-                <Link href="/ca/programs#inclusion">Inclusion work</Link>
+                <Link href="/ca/programs#coding">Quality Education · SDG 4</Link>
               </Reveal>
             </article>
           </div>
         </div>
       </section>
 
-      <EventBoard events={events} heading="Surrey events." />
+      <EventBoard events={events} heading="Surrey events." location="Surrey, BC" />
 
       <section className="section" style={{ paddingTop: 0 }} id="surrey-preview">
         <div className="wrap">
           <Reveal>
             <p className="kicker">Surrey programs</p>
-            <h2>Four lines of local work.</h2>
+            <h2>Local work in Surrey.</h2>
             <p className="lead">
-              Food hampers, neighbourhood outreach, inclusion gatherings, and volunteer coordination. Photos on this
-              Canada site are representative of community work in British Columbia until HBF Canada event photos are
-              added.
+              Family hampers, Code for 1000 Children with Generation AI Surrey, neighbourhood outreach, inclusion
+              gatherings, and volunteer coordination. Photos on this Canada site are representative of community work
+              in British Columbia until HBF Canada event photos are added.
             </p>
           </Reveal>
           <div className="photo-strip" aria-label="Surrey program themes">
@@ -148,7 +148,8 @@ export default async function CanadaHomePage() {
             <p className="kicker">HBF Canada Society</p>
             <h2>A separate society, a shared mission.</h2>
             <p>
-              Incorporated under the British Columbia Societies Act. HBF Canada Society does not hold UN ECOSOC status.
+              Incorporated under the British Columbia Societies Act. Special Consultative Status with the Economic and
+              Social Council is held by HBF Nigeria only.
               Donations received here stay with the Canada society unless a future grant to Nigeria is approved and
               recorded separately.
             </p>

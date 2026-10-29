@@ -68,7 +68,9 @@ export function SiteHeader({ region, urlMode = "prefixed" }: { region: SiteRegio
       <div className="topbar">
         <div className="wrap topbar-inner">
           {region === "ng" ? (
-            <span>HBF Nigeria · UN ECOSOC since 21 July 2026 · CAC/IT/167408</span>
+            <span>
+              HBF Nigeria · Special Consultative Status with the Economic and Social Council since 2025 · CAC/IT/167408
+            </span>
           ) : (
             <span>HBF Canada Society · BC S0086143 · Surrey, British Columbia</span>
           )}
