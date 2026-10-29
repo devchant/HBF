@@ -52,8 +52,7 @@ export default async function CanadaProgramsPage() {
               <p className="kicker">Upcoming · Surrey, BC</p>
               <h2>Canada Family Hamper Outreach.</h2>
               <p>
-                Comfort hampers for newcomer and low-income families in Surrey, BC. Pilot: 25 families. Status:
-                Upcoming – Date to be announced.
+                Comfort hampers for newcomer and low-income families in Surrey, BC. Pilot: 25 families.
               </p>
               <div className="actions">
                 <Link className="btn gold" href="/ca/donate">
@@ -238,7 +237,7 @@ export default async function CanadaProgramsPage() {
                   Digital literacy and coding for 1000 children and youth in Surrey by 2028, in line with SDG 4 Quality
                   Education, in partnership with Generation AI Surrey. Starting with a pilot cohort of 10 learners.
                 </p>
-                <p className="impact">Goal: 2027-2029 | Pilot: 10 learners. Status: Upcoming – Date to be announced.</p>
+                <p className="impact">Goal: 2027-2029 | Pilot: 10 learners.</p>
               </Reveal>
             </div>
           </article>

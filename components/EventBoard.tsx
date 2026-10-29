@@ -60,15 +60,11 @@ function EventGrid({
                 ) : null}
                 <h2>{event.title}</h2>
                 {event.summary ? <p>{event.summary}</p> : null}
-                <div className="meta-row">
-                  {event.eventDate ? (
+                {event.eventDate ? (
+                  <div className="meta-row">
                     <span>{event.eventDate}</span>
-                  ) : (
-                    <span>
-                      {event.status === "upcoming" ? "Upcoming – Date to be announced" : "Date to be announced"}
-                    </span>
-                  )}
-                </div>
+                  </div>
+                ) : null}
               </div>
             </article>
           ))}
