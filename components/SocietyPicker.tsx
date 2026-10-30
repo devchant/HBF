@@ -43,13 +43,13 @@ export function SocietyPicker() {
           <p className="kicker">Welcome</p>
           <h1 id="society-modal-title">Which society are you here for?</h1>
           <p className="lead">
-            HBF Nigeria and HBF Canada Society are separate legal entities. Gifts, programs, and registration details
-            are not shared between them.
+            Humanitarian Betterment Foundation Nigeria and Humanitarian Betterment Foundation Canada Society are
+            separate legal entities. Gifts, programs, and registration details are not shared between them.
           </p>
           <div className="society-modal-options">
             <Link className="society-option society-option-ng" href="/ng">
               <span className="society-option-tag">Nigeria</span>
-              <strong>HBF Nigeria</strong>
+              <strong>Humanitarian Betterment Foundation Nigeria</strong>
               <span>
                 Special Consultative Status with the Economic and Social Council since 2025 · Warri &amp; Abuja ·
                 CAC/IT/167408

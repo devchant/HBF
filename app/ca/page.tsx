@@ -56,8 +56,8 @@ export default async function CanadaHomePage() {
             <h2>Health, inclusion, and livelihood in Surrey.</h2>
             <p className="lead">
               HBF Canada Society works in affiliation with HBF Nigeria to support vulnerable people through local
-              outreach. The Surrey programs below are how the society organizes that work. Dates and sign-up details
-              are also published on {SITE.canada.label}.
+              outreach. The programs below show how we organize this work in Surrey. Dates and sign-up details are
+              published at <a href={SITE.canada.href}>{SITE.canada.label}</a>.
             </p>
           </Reveal>
           <div className="cards" style={{ marginTop: 28 }}>
@@ -66,10 +66,7 @@ export default async function CanadaHomePage() {
               <Reveal>
                 <div className="pillar-icon" aria-hidden="true">01</div>
                 <h3>Neighbourhood outreach</h3>
-                <p>
-                  Volunteer days, community gatherings, and referral support for families across Surrey and the Lower
-                  Mainland.
-                </p>
+                <p>Community gatherings, referrals, and local events that bring neighbours together in Surrey.</p>
                 <Link href="/ca/programs#community">Community programs</Link>
               </Reveal>
             </article>
@@ -77,24 +74,21 @@ export default async function CanadaHomePage() {
               <img src="/images/ca/food-hampers.jpg" alt={REP} />
               <Reveal>
                 <div className="pillar-icon" aria-hidden="true">02</div>
-                <h3>Canada Family Hamper Outreach</h3>
-                <p>
-                  Comfort hampers for newcomer and low-income families in Surrey, BC. Pilot: 25 families. Date to be
-                  announced.
-                </p>
-                <Link href="/ca/programs#hampers">Family hamper program</Link>
+                <h3>Surrey food hampers</h3>
+                <p>Food hampers and household essentials for families in need — our livelihood program in Surrey.</p>
+                <Link href="/ca/programs#hampers">Food hamper program</Link>
               </Reveal>
             </article>
             <article className="card">
               <img src="/images/ca/together.jpg" alt={REP} />
               <Reveal>
                 <div className="pillar-icon" aria-hidden="true">03</div>
-                <h3>Code for 1000 Children</h3>
+                <h3>Our Inclusion Program</h3>
                 <p>
-                  Digital literacy and AI coding for 1000 children and youth in Surrey by 2028, in partnership with
-                  Generation AI Surrey. Pilot: 10 learners.
+                  Welcoming newcomers, seniors and people with disabilities, bringing HBF Nigeria&apos;s spirit of
+                  inclusion to communities here in Canada.
                 </p>
-                <Link href="/ca/programs#coding">Quality Education · SDG 4</Link>
+                <Link href="/ca/programs#inclusion">Inclusion work</Link>
               </Reveal>
             </article>
           </div>
@@ -107,11 +101,11 @@ export default async function CanadaHomePage() {
         <div className="wrap">
           <Reveal>
             <p className="kicker">Surrey programs</p>
-            <h2>Local work in Surrey.</h2>
+            <h2>Four lines of local work.</h2>
             <p className="lead">
-              Family hampers, Code for 1000 Children with Generation AI Surrey, neighbourhood outreach, inclusion
-              gatherings, and volunteer coordination. Photos on this Canada site are representative of community work
-              in British Columbia until HBF Canada event photos are added.
+              Food hampers, neighbourhood outreach, inclusion gatherings and volunteer coordination. Photos on this
+              site are representative of community work in British Columbia and will be replaced as HBF Canada Society
+              event photos become available.
             </p>
           </Reveal>
           <div className="photo-strip" aria-label="Surrey program themes">
@@ -148,10 +142,9 @@ export default async function CanadaHomePage() {
             <p className="kicker">HBF Canada Society</p>
             <h2>A separate society, a shared mission.</h2>
             <p>
-              Incorporated under the British Columbia Societies Act. Special Consultative Status with the Economic and
-              Social Council is held by HBF Nigeria only.
-              Donations received here stay with the Canada society unless a future grant to Nigeria is approved and
-              recorded separately.
+              Incorporated under the British Columbia Societies Act. HBF Canada Society does not hold UN ECOSOC
+              status. Donations stay with HBF Canada Society to support work in Canada, unless a future grant to
+              Nigeria is approved and recorded separately.
             </p>
             <p className="notice">
               <strong>Official listings.</strong> Visit{" "}

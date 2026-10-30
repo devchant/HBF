@@ -50,10 +50,8 @@ export default async function CanadaProgramsPage() {
           <article className="feature-drive" id="hampers">
             <Reveal>
               <p className="kicker">Upcoming · Surrey, BC</p>
-              <h2>Canada Family Hamper Outreach.</h2>
-              <p>
-                Comfort hampers for newcomer and low-income families in Surrey, BC. Pilot: 25 families.
-              </p>
+              <h2>Surrey food hampers.</h2>
+              <p>Food hampers and household essentials for families in need — our livelihood program in Surrey.</p>
               <div className="actions">
                 <Link className="btn gold" href="/ca/donate">
                   <Icon name="heart" />
@@ -88,8 +86,8 @@ export default async function CanadaProgramsPage() {
                 <span className="chip">Livelihood</span>
               </div>
               <div className="campaign-body">
-                <h2>Canada Family Hamper Outreach</h2>
-                <p>Comfort hampers for newcomer and low-income families in Surrey, BC. Pilot: 25 families.</p>
+                <h2>Surrey food hampers</h2>
+                <p>Food hampers and essential household items for Surrey families in need.</p>
                 <div className="meta-row">
                   <span>Surrey</span>
                   <span>Essentials</span>
@@ -103,7 +101,7 @@ export default async function CanadaProgramsPage() {
               </div>
               <div className="campaign-body">
                 <h2>Neighbourhood outreach</h2>
-                <p>Community gatherings, referral support, and local events across Surrey.</p>
+                <p>Bringing neighbours together through community gatherings, referrals and local events across Surrey.</p>
                 <div className="meta-row">
                   <span>Local</span>
                   <span>Families</span>
@@ -117,7 +115,7 @@ export default async function CanadaProgramsPage() {
               </div>
               <div className="campaign-body">
                 <h2>Inclusion &amp; belonging</h2>
-                <p>Welcome for newcomers, seniors, and people with disabilities.</p>
+                <p>A welcoming space for newcomers, seniors and people with disabilities in Surrey.</p>
                 <div className="meta-row">
                   <span>Inclusion</span>
                   <span>BC</span>
@@ -148,7 +146,7 @@ export default async function CanadaProgramsPage() {
               </div>
               <div className="campaign-body">
                 <h2>Volunteer network</h2>
-                <p>Packing days, distribution, and neighbour-to-neighbour coordination.</p>
+                <p>Volunteer packing days, food distribution and neighbour-to-neighbour support across Surrey.</p>
                 <div className="meta-row">
                   <span>Surrey</span>
                   <span>Hands-on</span>
@@ -172,11 +170,9 @@ export default async function CanadaProgramsPage() {
                 <p className="eyebrow">Surrey · Community</p>
                 <h2>Neighbourhood outreach</h2>
                 <p>
-                  HBF Canada Society coordinates volunteers and partners in Surrey to meet people where they are —
-                  community centres, faith groups, and local events. Specific dates and locations are posted on{" "}
-                  {SITE.canada.label} as they are confirmed.
+                  HBF Canada Society works with volunteers and partners at community centres, faith groups, and local
+                  events. Confirmed dates are posted on {SITE.canada.label}.
                 </p>
-                <p className="impact">Focus: stronger local networks and direct support for vulnerable households.</p>
               </Reveal>
             </div>
           </article>
@@ -192,9 +188,8 @@ export default async function CanadaProgramsPage() {
                 <p className="eyebrow">Livelihood · Hampers</p>
                 <h2>Food and household support</h2>
                 <p>
-                  Surrey food hampers are the Canada society&apos;s livelihood program: staples and basic household
-                  items assembled with volunteers. Participation criteria and distribution times are announced on the
-                  official program site.
+                  Volunteers assemble staples and household items for distribution in Surrey. Times and how to take
+                  part are posted on {SITE.canada.label} as they are set.
                 </p>
                 <Link className="btn" href="/ca/donate">
                   <Icon name="heart" />
@@ -213,11 +208,10 @@ export default async function CanadaProgramsPage() {
             <div className="program-copy">
               <Reveal>
                 <p className="eyebrow">Inclusion</p>
-                <h2>Participation for everyone</h2>
+                <h2>Our Inclusion Program</h2>
                 <p>
-                  HBF Nigeria&apos;s disability-inclusion work inspires how the Canada society designs accessible
-                  gatherings and volunteer roles for newcomers, seniors, and people with disabilities. Special
-                  Consultative Status with the Economic and Social Council remains with HBF Nigeria only.
+                  Welcoming newcomers, seniors and people with disabilities, bringing HBF Nigeria&apos;s spirit of
+                  inclusion to communities here in Canada.
                 </p>
               </Reveal>
             </div>
@@ -253,8 +247,7 @@ export default async function CanadaProgramsPage() {
                 <p className="eyebrow">Surrey · Volunteers</p>
                 <h2>Hands-on in the community</h2>
                 <p>
-                  Volunteers pack hampers, welcome neighbours at gatherings, and help with distribution. If you live
-                  in Surrey or the Lower Mainland, watch {SITE.canada.label} for the next volunteer call.
+                  If you live in Surrey or the Lower Mainland, watch {SITE.canada.label} for the next volunteer call.
                 </p>
                 <a className="btn" href={SITE.canada.href} target="_blank" rel="noopener noreferrer">
                   Volunteer updates
