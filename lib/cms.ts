@@ -98,7 +98,7 @@ export async function getDonateAccount(region: SiteRegion): Promise<DonateAccoun
   if (!supabase) return DONATE_ACCOUNTS[region];
   const { data } = await supabase
     .from("donate_accounts")
-    .select("bank_name, account_name, account_number, currency, note")
+    .select("bank_name, account_name, account_number, extra_account_number, swift_code, sort_code, currency, note")
     .eq("region", region)
     .maybeSingle();
   if (!data) return DONATE_ACCOUNTS[region];
@@ -106,6 +106,9 @@ export async function getDonateAccount(region: SiteRegion): Promise<DonateAccoun
     bankName: data.bank_name,
     accountName: data.account_name,
     accountNumber: data.account_number,
+    extraAccountNumber: data.extra_account_number ?? "",
+    swiftCode: data.swift_code ?? "",
+    sortCode: data.sort_code ?? "",
     currency: data.currency,
     note: data.note ?? "",
   };

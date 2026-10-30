@@ -110,17 +110,35 @@ export function DonatePanel({ region, account }: DonatePanelProps) {
         <p className="donate-account-note">{note}</p>
         <dl className="donate-account-dl">
           <div>
-            <dt>Bank</dt>
-            <dd>{bankName}</dd>
-          </div>
-          <div>
             <dt>Account name</dt>
             <dd>{account.accountName}</dd>
+          </div>
+          <div>
+            <dt>Bank</dt>
+            <dd>{bankName}</dd>
           </div>
           <div>
             <dt>Account number</dt>
             <dd className="donate-account-number">{account.accountNumber}</dd>
           </div>
+          {account.extraAccountNumber ? (
+            <div>
+              <dt>Bank account number</dt>
+              <dd className="donate-account-number">{account.extraAccountNumber}</dd>
+            </div>
+          ) : null}
+          {account.sortCode ? (
+            <div>
+              <dt>Sort code</dt>
+              <dd className="donate-account-number">{account.sortCode}</dd>
+            </div>
+          ) : null}
+          {account.swiftCode ? (
+            <div>
+              <dt>Swift code</dt>
+              <dd className="donate-account-number">{account.swiftCode}</dd>
+            </div>
+          ) : null}
           <div>
             <dt>Currency</dt>
             <dd>{account.currency}</dd>

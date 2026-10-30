@@ -47,6 +47,21 @@ export function AccountEditor({ region, account }: Props) {
         <input value={form.accountNumber} onChange={(e) => set("accountNumber", e.target.value)} required />
       </label>
       <label className="admin-field">
+        Bank account number (optional)
+        <input
+          value={form.extraAccountNumber ?? ""}
+          onChange={(e) => set("extraAccountNumber", e.target.value)}
+        />
+      </label>
+      <label className="admin-field">
+        Sort code
+        <input value={form.sortCode ?? ""} onChange={(e) => set("sortCode", e.target.value)} />
+      </label>
+      <label className="admin-field">
+        Swift code
+        <input value={form.swiftCode ?? ""} onChange={(e) => set("swiftCode", e.target.value)} />
+      </label>
+      <label className="admin-field">
         Currency
         <input value={form.currency} onChange={(e) => set("currency", e.target.value)} required />
       </label>
