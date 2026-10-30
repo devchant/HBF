@@ -107,8 +107,8 @@ export default async function ProgramsPage() {
             <a className="campaign" href="#idpd" data-program="completed">
               <div className="campaign-media">
                 <img
-                  src="/images/gallery/idpd-2021-group.jpg"
-                  alt="HBF at IDPD 2021 in Warri, standing with the collaboration banner"
+                  src="/images/gallery/idpd-2021-high-table.jpg"
+                  alt="HBF leadership at the IDPD 2021 high table in Warri"
                 />
                 <span className="chip">Completed · 3 Dec 2021</span>
               </div>
@@ -125,8 +125,8 @@ export default async function ProgramsPage() {
             <a className="campaign" href="#hospital" data-program="completed">
               <div className="campaign-media">
                 <img
-                  src="/images/gallery/hospital-childrens-ward.jpg"
-                  alt="HBF team with relief bags outside the children's ward in Warri"
+                  src="/images/gallery/hospital-ward.jpg"
+                  alt="Inside the children's ward during HBF's visitation in Warri"
                 />
                 <span className="chip">Completed · Warri</span>
               </div>

@@ -6,6 +6,19 @@ import { GalleryWall } from "@/components/GalleryWall";
 import { Reveal } from "@/components/Reveal";
 import { getEvents, getGallery, getHero } from "@/lib/cms";
 
+const USED_PHOTOS = [
+  "/images/ca/food-hampers.jpg",
+  "/images/ca/community-gathering.jpg",
+  "/images/ca/together.jpg",
+  "/images/ca/newcomers.jpg",
+  "/images/ca/volunteers-team.jpg",
+  "/images/ca/neighbourhood.jpg",
+  "/images/ca/produce.jpg",
+  "/images/ca/volunteers.jpg",
+  "/images/ca/packing.jpg",
+  "/images/ca/food-support.jpg",
+];
+
 export const metadata = {
   title: "Programs",
   description: `HBF Canada Society Surrey programs: family hampers, Code for 1000 Children with Generation AI Surrey, neighbourhood outreach, inclusion, and volunteers.`,
@@ -21,6 +34,7 @@ export default async function CanadaProgramsPage() {
     getHero("ca", "programs"),
     getGallery("ca"),
   ]);
+  const gallery = photos.filter((photo) => !USED_PHOTOS.includes(photo.imageUrl));
   return (
     <main>
       <section className="photo-hero">
@@ -124,7 +138,7 @@ export default async function CanadaProgramsPage() {
             </a>
             <a className="campaign" href="#coding">
               <div className="campaign-media">
-                <img src="/images/ca/community-gathering.jpg" alt={REP} />
+                <img src="/images/ca/newcomers.jpg" alt={REP} />
                 <span className="chip">SDG 4</span>
               </div>
               <div className="campaign-body">
@@ -160,10 +174,8 @@ export default async function CanadaProgramsPage() {
       <section className="section" style={{ paddingTop: 12 }}>
         <div className="wrap">
           <article className="program-story" id="community">
-            <div className="shot-grid">
+            <div className="shot-grid single">
               <img className="lead" src="/images/ca/neighbourhood.jpg" alt={REP} />
-              <img src="/images/ca/community-gathering.jpg" alt={REP} />
-              <img src="/images/ca/newcomers.jpg" alt={REP} />
             </div>
             <div className="program-copy">
               <Reveal>
@@ -178,10 +190,8 @@ export default async function CanadaProgramsPage() {
           </article>
 
           <article className="program-story reverse" id="essentials">
-            <div className="shot-grid">
-              <img className="lead" src="/images/ca/food-hampers.jpg" alt={REP} />
-              <img src="/images/ca/produce.jpg" alt={REP} />
-              <img src="/images/ca/packing.jpg" alt={REP} />
+            <div className="shot-grid single">
+              <img className="lead" src="/images/ca/produce.jpg" alt={REP} />
             </div>
             <div className="program-copy">
               <Reveal>
@@ -200,10 +210,8 @@ export default async function CanadaProgramsPage() {
           </article>
 
           <article className="program-story" id="inclusion">
-            <div className="shot-grid">
-              <img className="lead" src="/images/ca/together.jpg" alt={REP} />
-              <img src="/images/ca/newcomers.jpg" alt={REP} />
-              <img src="/images/ca/volunteers.jpg" alt={REP} />
+            <div className="shot-grid single">
+              <img className="lead" src="/images/ca/volunteers.jpg" alt={REP} />
             </div>
             <div className="program-copy">
               <Reveal>
@@ -218,10 +226,8 @@ export default async function CanadaProgramsPage() {
           </article>
 
           <article className="program-story reverse" id="coding">
-            <div className="shot-grid">
-              <img className="lead" src="/images/ca/community-gathering.jpg" alt={REP} />
-              <img src="/images/ca/together.jpg" alt={REP} />
-              <img src="/images/ca/newcomers.jpg" alt={REP} />
+            <div className="shot-grid single">
+              <img className="lead" src="/images/ca/packing.jpg" alt={REP} />
             </div>
             <div className="program-copy">
               <Reveal>
@@ -237,10 +243,8 @@ export default async function CanadaProgramsPage() {
           </article>
 
           <article className="program-story" id="volunteers">
-            <div className="shot-grid">
-              <img className="lead" src="/images/ca/volunteers-team.jpg" alt={REP} />
-              <img src="/images/ca/packing.jpg" alt={REP} />
-              <img src="/images/ca/food-support.jpg" alt={REP} />
+            <div className="shot-grid single">
+              <img className="lead" src="/images/ca/food-support.jpg" alt={REP} />
             </div>
             <div className="program-copy">
               <Reveal>
@@ -259,22 +263,19 @@ export default async function CanadaProgramsPage() {
         </div>
       </section>
 
-      <section className="section" style={{ paddingTop: 0 }} id="gallery">
-        <div className="wrap">
-          <Reveal>
-            <p className="kicker">Gallery</p>
-            <h2>Images of community work.</h2>
-            <p className="lead">
-              These photographs are representative of food support, volunteering, and gathering in Canada. They are
-              not claimed as specific HBF Canada Society events. Field photos from Surrey can replace them when
-              available.
-            </p>
-          </Reveal>
-          <div style={{ marginTop: 22 }}>
-            <GalleryWall photos={photos} />
+      {gallery.length > 0 ? (
+        <section className="section" style={{ paddingTop: 0 }} id="gallery">
+          <div className="wrap">
+            <Reveal>
+              <p className="kicker">Gallery</p>
+              <h2>Images of community work.</h2>
+            </Reveal>
+            <div style={{ marginTop: 22 }}>
+              <GalleryWall photos={gallery} />
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      ) : null}
     </main>
   );
 }

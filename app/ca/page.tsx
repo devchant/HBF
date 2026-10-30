@@ -1,17 +1,16 @@
 import Link from "next/link";
 import { EventBoard } from "@/components/EventBoard";
-import { GalleryWall } from "@/components/GalleryWall";
 import { Icon } from "@/components/Icon";
 import { SITE } from "@/lib/links";
 import { Reveal } from "@/components/Reveal";
-import { getEvents, getGallery, getHero } from "@/lib/cms";
+import { getEvents, getHero } from "@/lib/cms";
 
 const REP = "Representative image for Surrey community work — not a specific HBF event photo";
 
 export const dynamic = "force-dynamic";
 
 export default async function CanadaHomePage() {
-  const [hero, events, photos] = await Promise.all([getHero("ca"), getEvents("ca"), getGallery("ca")]);
+  const [hero, events] = await Promise.all([getHero("ca"), getEvents("ca")]);
   return (
     <main>
       <section className="home-hero">
@@ -137,7 +136,7 @@ export default async function CanadaHomePage() {
 
       <section className="section" style={{ paddingTop: 0 }}>
         <div className="wrap story">
-          <img src="/images/ca/volunteers-team.jpg" alt={REP} />
+          <img src="/images/ca/food-support.jpg" alt={REP} />
           <Reveal>
             <p className="kicker">HBF Canada Society</p>
             <h2>A separate society, a shared mission.</h2>
@@ -156,18 +155,6 @@ export default async function CanadaHomePage() {
               <Icon name="arrow" />
             </Link>
           </Reveal>
-        </div>
-      </section>
-
-      <section className="section" style={{ paddingTop: 0 }}>
-        <div className="wrap">
-          <Reveal>
-            <p className="kicker">In pictures</p>
-            <h2>Community, food, and gathering.</h2>
-          </Reveal>
-          <div style={{ marginTop: 22 }}>
-            <GalleryWall photos={photos} />
-          </div>
         </div>
       </section>
 
