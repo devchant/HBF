@@ -8,15 +8,11 @@ import { getEvents, getGallery, getHero } from "@/lib/cms";
 
 const USED_PHOTOS = [
   "/images/ca/food-hampers.jpg",
-  "/images/ca/community-gathering.jpg",
   "/images/ca/together.jpg",
   "/images/ca/newcomers.jpg",
   "/images/ca/volunteers-team.jpg",
   "/images/ca/neighbourhood.jpg",
   "/images/ca/produce.jpg",
-  "/images/ca/volunteers.jpg",
-  "/images/ca/packing.jpg",
-  "/images/ca/food-support.jpg",
 ];
 
 export const metadata = {
@@ -110,7 +106,7 @@ export default async function CanadaProgramsPage() {
             </a>
             <a className="campaign" href="#community">
               <div className="campaign-media">
-                <img src="/images/ca/community-gathering.jpg" alt={REP} />
+                <img src="/images/ca/neighbourhood.jpg" alt={REP} />
                 <span className="chip">Surrey</span>
               </div>
               <div className="campaign-body">
@@ -174,9 +170,6 @@ export default async function CanadaProgramsPage() {
       <section className="section" style={{ paddingTop: 12 }}>
         <div className="wrap">
           <article className="program-story" id="community">
-            <div className="shot-grid single">
-              <img className="lead" src="/images/ca/neighbourhood.jpg" alt={REP} />
-            </div>
             <div className="program-copy">
               <Reveal>
                 <p className="eyebrow">Surrey · Community</p>
@@ -210,9 +203,6 @@ export default async function CanadaProgramsPage() {
           </article>
 
           <article className="program-story" id="inclusion">
-            <div className="shot-grid single">
-              <img className="lead" src="/images/ca/volunteers.jpg" alt={REP} />
-            </div>
             <div className="program-copy">
               <Reveal>
                 <p className="eyebrow">Inclusion</p>
@@ -226,9 +216,6 @@ export default async function CanadaProgramsPage() {
           </article>
 
           <article className="program-story reverse" id="coding">
-            <div className="shot-grid single">
-              <img className="lead" src="/images/ca/packing.jpg" alt={REP} />
-            </div>
             <div className="program-copy">
               <Reveal>
                 <p className="eyebrow">Upcoming · Surrey, BC · SDG 4</p>
@@ -243,9 +230,6 @@ export default async function CanadaProgramsPage() {
           </article>
 
           <article className="program-story" id="volunteers">
-            <div className="shot-grid single">
-              <img className="lead" src="/images/ca/food-support.jpg" alt={REP} />
-            </div>
             <div className="program-copy">
               <Reveal>
                 <p className="eyebrow">Surrey · Volunteers</p>

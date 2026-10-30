@@ -93,17 +93,25 @@ export function DonatePanel({ region, account }: DonatePanelProps) {
   }
 
   const currencyLabel = account.currency === "NGN" ? "₦" : "CA $";
+  const bankName = account.bankName.replace(/\s*\(placeholder\)/i, "").trim();
+  const noteLooksDraft = /placeholder|replace with|going live/i.test(account.note);
+  const note =
+    !account.note || noteLooksDraft
+      ? region === "ng"
+        ? "Transfer to this Sterling Bank account, then upload your proof of payment so HBF Nigeria can confirm your gift."
+        : "Transfer to this account, then upload your proof of payment so HBF Canada Society can confirm your gift."
+      : account.note;
 
   return (
     <>
       <article className="card donate-account-card">
-        <p className="kicker">Transfer details</p>
-        <h3>Bank account (placeholder)</h3>
-        <p className="donate-placeholder-note">{account.note}</p>
+        <p className="kicker">How to give</p>
+        <h3>{region === "ng" ? "Donate to HBF Nigeria" : "Donate to HBF Canada Society"}</h3>
+        <p className="donate-account-note">{note}</p>
         <dl className="donate-account-dl">
           <div>
             <dt>Bank</dt>
-            <dd>{account.bankName}</dd>
+            <dd>{bankName}</dd>
           </div>
           <div>
             <dt>Account name</dt>
@@ -119,8 +127,8 @@ export function DonatePanel({ region, account }: DonatePanelProps) {
           </div>
         </dl>
         <p className="donate-steps">
-          Transfer your gift, then click <strong>Donate now</strong> to send your name (or give anonymously), amount,
-          and proof of payment.
+          After you transfer, click <strong>Donate now</strong> to send your name or give anonymously, the amount, and
+          a screenshot or PDF of the transfer.
         </p>
         <button type="button" className="btn gold donate-now-btn" onClick={() => setOpen(true)}>
           <Icon name="heart" />

@@ -17,20 +17,13 @@ export default async function DonateNigeriaPage() {
   const account = await getDonateAccount("ng");
   return (
     <main>
-      <section className="photo-hero">
-        <img
-          src="/images/gallery/hospital-supplies.jpg"
-          alt="Relief bags prepared by HBF"
-        />
-        <div className="wrap photo-hero-bar">
-          <h1>Donate in Nigeria</h1>
-          <p>HBF Nigeria</p>
-        </div>
-      </section>
-
-      <section className="section" style={{ paddingTop: 36 }}>
+      <section className="section" style={{ paddingTop: 36 }} id="give">
         <div className="wrap">
-          <article className="feature-drive">
+          <p className="kicker">HBF Nigeria</p>
+          <h1>Donate in Nigeria</h1>
+          <DonatePanel region="ng" account={account} />
+
+          <article className="feature-drive" style={{ marginTop: 22 }}>
             <Reveal>
               <p className="kicker">December 2026 · Abuja</p>
               <h2>Food hampers for widows.</h2>
@@ -38,7 +31,7 @@ export default async function DonateNigeriaPage() {
                 HBF Nigeria will distribute rice, oil, beans, garri, and household essentials to widows and vulnerable
                 women in Abuja.
               </p>
-              <Link className="btn gold" href="/ng/programs#abuja">
+              <Link className="btn" href="/ng/programs#abuja">
                 Read the plan
                 <Icon name="arrow" />
               </Link>
@@ -59,24 +52,19 @@ export default async function DonateNigeriaPage() {
             </div>
           </article>
 
-          <div className="grid-2" style={{ marginTop: 18 }}>
+          <article className="card" style={{ marginTop: 18 }}>
             <Reveal>
-              <DonatePanel region="ng" account={account} />
+              <h3>Who receives the gift</h3>
+              <p>
+                HBF Nigeria. CAC/IT/167408 | SCUML compliant. Humanitarian Betterment Foundation in Special
+                Consultative Status with the Economic and Social Council since 2025.
+              </p>
+              <p className="notice">
+                <strong>Canada gifts.</strong> HBF Canada Society receives donations separately on{" "}
+                <Link href="/ca/donate">the Canada site</Link>.
+              </p>
             </Reveal>
-            <article className="card">
-              <Reveal>
-                <h3>Who receives the gift</h3>
-                <p>
-                  HBF Nigeria. CAC/IT/167408 | SCUML compliant. Humanitarian Betterment Foundation in Special
-                  Consultative Status with the Economic and Social Council since 2025.
-                </p>
-                <p className="notice">
-                  <strong>Canada gifts.</strong> HBF Canada Society receives donations separately on{" "}
-                  <Link href="/ca/donate">the Canada site</Link>.
-                </p>
-              </Reveal>
-            </article>
-          </div>
+          </article>
         </div>
       </section>
     </main>

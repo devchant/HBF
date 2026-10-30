@@ -1,6 +1,5 @@
 import type { SiteRegion } from "@/lib/site";
 
-/** Placeholder banking details for UI until live accounts are configured. */
 export type DonateAccount = {
   bankName: string;
   accountName: string;
@@ -11,17 +10,17 @@ export type DonateAccount = {
 
 export const DONATE_ACCOUNTS: Record<SiteRegion, DonateAccount> = {
   ng: {
-    bankName: "Sterling Bank (placeholder)",
-    accountName: "Humanitarian Betterment Foundation Nigeria",
+    bankName: "Sterling Bank",
+    accountName: "Humanitarian Betterment Foundation",
     accountNumber: "0000000000",
     currency: "NGN",
-    note: "Replace with the official HBF Nigeria Sterling Bank details before going live.",
+    note: "Transfer to this Sterling Bank account, then upload your proof of payment so HBF Nigeria can confirm your gift.",
   },
   ca: {
-    bankName: "Canadian bank (placeholder)",
-    accountName: "HBF Canada Society",
+    bankName: "Bank transfer",
+    accountName: "Humanitarian Betterment Foundation Canada Society",
     accountNumber: "0000000000",
     currency: "CAD",
-    note: "Replace with the official HBF Canada Society account before going live.",
+    note: "Transfer to this account, then upload your proof of payment so HBF Canada Society can confirm your gift.",
   },
 };

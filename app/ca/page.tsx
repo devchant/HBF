@@ -61,7 +61,7 @@ export default async function CanadaHomePage() {
           </Reveal>
           <div className="cards" style={{ marginTop: 28 }}>
             <article className="card">
-              <img src="/images/ca/volunteers-team.jpg" alt={REP} />
+              <img src="/images/ca/packing.jpg" alt={REP} />
               <Reveal>
                 <div className="pillar-icon" aria-hidden="true">01</div>
                 <h3>Neighbourhood outreach</h3>
@@ -112,17 +112,9 @@ export default async function CanadaHomePage() {
               <img src="/images/ca/produce.jpg" alt={REP} />
               <span>Food hampers</span>
             </Link>
-            <Link href="/ca/programs#community" className="photo-strip-item">
-              <img src="/images/ca/community-gathering.jpg" alt={REP} />
-              <span>Neighbourhood</span>
-            </Link>
             <Link href="/ca/programs#inclusion" className="photo-strip-item">
               <img src="/images/ca/newcomers.jpg" alt={REP} />
               <span>Inclusion</span>
-            </Link>
-            <Link href="/ca/programs#volunteers" className="photo-strip-item">
-              <img src="/images/ca/packing.jpg" alt={REP} />
-              <span>Volunteers</span>
             </Link>
           </div>
           <p style={{ marginTop: 18 }}>
@@ -135,8 +127,7 @@ export default async function CanadaHomePage() {
       </section>
 
       <section className="section" style={{ paddingTop: 0 }}>
-        <div className="wrap story">
-          <img src="/images/ca/food-support.jpg" alt={REP} />
+        <div className="wrap story text-only">
           <Reveal>
             <p className="kicker">HBF Canada Society</p>
             <h2>A separate society, a shared mission.</h2>

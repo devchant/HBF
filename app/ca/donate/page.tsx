@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { DonatePanel } from "@/components/DonatePanel";
-import { Icon } from "@/components/Icon";
 import { SITE } from "@/lib/links";
 import { Reveal } from "@/components/Reveal";
 import { getDonateAccount } from "@/lib/cms";
@@ -16,29 +15,20 @@ export default async function CanadaDonatePage() {
   const account = await getDonateAccount("ca");
   return (
     <main>
-      <section className="photo-hero">
-        <img src="/images/ca/food-hampers.jpg" alt="Community food support — representative image for Canada giving" />
-        <div className="wrap photo-hero-bar">
-          <h1>Donate in Canada</h1>
-          <p>HBF Canada Society</p>
-        </div>
-      </section>
-
-      <section className="section" style={{ paddingTop: 36 }}>
+      <section className="section" style={{ paddingTop: 36 }} id="give">
         <div className="wrap">
-          <article className="feature-drive">
+          <p className="kicker">HBF Canada Society</p>
+          <h1>Donate in Canada</h1>
+          <DonatePanel region="ca" account={account} />
+
+          <article className="feature-drive" style={{ marginTop: 22 }}>
             <Reveal>
               <p className="kicker">Surrey · British Columbia</p>
               <h2>Gifts for Canada programs.</h2>
               <p>
-                Donations are received by HBF Canada Society, registration S0086143. They support Canada programs unless
-                a future grant to Nigeria is approved and recorded separately.
+                Donations are received by Humanitarian Betterment Foundation Canada Society, registration S0086143.
+                They support Canada programs unless a future grant to Nigeria is approved and recorded separately.
               </p>
-              <Link className="btn gold" href="#give">
-                <Icon name="heart" />
-                How to give below
-                <Icon name="arrow" />
-              </Link>
             </Reveal>
             <div className="goal-board" aria-label="Canada society">
               <div>
@@ -56,24 +46,18 @@ export default async function CanadaDonatePage() {
             </div>
           </article>
 
-          <div className="grid-2" style={{ marginTop: 18 }} id="give">
+          <article className="card" style={{ marginTop: 18 }}>
             <Reveal>
-              <DonatePanel region="ca" account={account} />
+              <h3>Nigeria gifts</h3>
+              <p>
+                HBF Nigeria receives Nigeria donations separately. Special Consultative Status with the Economic and
+                Social Council applies to the Nigeria foundation only.
+              </p>
+              <Link className="btn" href="/ng/donate">
+                Nigeria donate page
+              </Link>
             </Reveal>
-            <article className="card">
-              <Reveal>
-                <h3>Nigeria gifts</h3>
-                <p>
-                  HBF Nigeria receives Nigeria donations separately. Special Consultative Status with the Economic and
-                  Social Council applies to the Nigeria foundation only.
-                </p>
-                <Link className="btn" href="/ng/donate">
-                  Nigeria donate page
-                  <Icon name="arrow" />
-                </Link>
-              </Reveal>
-            </article>
-          </div>
+          </article>
         </div>
       </section>
     </main>

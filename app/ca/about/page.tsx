@@ -28,7 +28,7 @@ export default async function CanadaAboutPage() {
 
       <section className="section" style={{ paddingTop: 36 }}>
         <div className="wrap story">
-          <img src="/images/ca/volunteers-team.jpg" alt={REP} />
+          <img src="/images/ca/packing.jpg" alt={REP} />
           <Reveal>
             <p className="kicker">Mission</p>
             <h2>Health, inclusion, and livelihood in Surrey.</h2>
@@ -64,10 +64,6 @@ export default async function CanadaAboutPage() {
             <figure>
               <img src="/images/ca/together.jpg" alt={REP} />
               <figcaption>Inclusion and belonging — representative</figcaption>
-            </figure>
-            <figure>
-              <img src="/images/ca/packing.jpg" alt={REP} />
-              <figcaption>Volunteer packing — representative</figcaption>
             </figure>
             <figure>
               <img src="/images/ca/newcomers.jpg" alt={REP} />
@@ -122,7 +118,7 @@ export default async function CanadaAboutPage() {
             </Reveal>
           </article>
           <article className="card">
-            <img src="/images/ca/community-gathering.jpg" alt={REP} />
+            <img src="/images/ca/volunteers-team.jpg" alt={REP} />
             <Reveal>
               <h3>HBF Nigeria</h3>
               <p>

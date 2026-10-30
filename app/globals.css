@@ -340,10 +340,9 @@ p { margin: 0 0 0.9rem; }
 }
 
 .donate-account-card h3 { margin: 0 0 8px; }
-.donate-placeholder-note {
+.donate-account-note {
   margin: 0 0 14px;
-  font-size: 14px;
-  color: var(--muted, #5a6b7a);
+  font-size: 15px;
 }
 .donate-account-dl {
   margin: 0 0 16px;
@@ -536,6 +535,7 @@ p { margin: 0 0 0.9rem; }
   align-items: center;
 }
 .story img { height: 360px; border-radius: 18px; }
+.story.text-only { grid-template-columns: 1fr; max-width: 72ch; }
 .photo-hero img {
   width: 100%;
   height: min(58vh, 620px);
@@ -725,6 +725,7 @@ p { margin: 0 0 0.9rem; }
   scroll-margin-top: 140px;
 }
 .program-story.reverse > .shot-grid { order: 2; }
+.program-story:not(:has(.shot-grid)) { grid-template-columns: 1fr; max-width: 72ch; }
 .program-story h2 { margin: 0 0 12px; font-size: clamp(32px, 4vw, 46px); }
 .eyebrow {
   margin: 0 0 8px;
